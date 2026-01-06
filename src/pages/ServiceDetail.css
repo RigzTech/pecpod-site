@@ -1,8 +1,8 @@
-/* Service Detail Page Styles */
+/* Service Detail Page Styles - Light Theme */
 
 .service-detail-page {
-    background: #000;
-    color: #fff;
+    background: #ffffff;
+    color: #0c0c0c;
 }
 
 /* Hero Section */
@@ -23,7 +23,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    /* Keeping hero dark for contrast with white text, or could be light with dark text. 
+       Usually hero images look better with dark overlay + white text. 
+       Let's keep hero dark but make the rest light. */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
 }
 
 .service-hero-content {
@@ -32,6 +35,8 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    color: #fff;
+    /* Force white text in hero */
 }
 
 .back-link {
@@ -52,6 +57,8 @@
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.1;
+    color: #fff;
+    /* Override global black */
 }
 
 .service-hero-tagline {
@@ -71,7 +78,7 @@
 /* Overview Section */
 .service-overview {
     padding: 6rem 0;
-    background: #000;
+    background: #ffffff;
 }
 
 .overview-grid {
@@ -84,20 +91,20 @@
 .overview-content h2 {
     font-size: clamp(2rem, 3vw, 2.5rem);
     margin-bottom: 2rem;
-    color: #D4AF37;
+    color: #0c0c0c;
 }
 
 .overview-text p {
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    color: #ccc;
+    color: #4a4a4a;
     font-size: 1.05rem;
 }
 
 .overview-image {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 .overview-image img {
@@ -110,14 +117,15 @@
 /* Process Section */
 .service-process {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: #f9f9f9;
+    /* Slight off-white for section distinction */
 }
 
 .section-title {
     text-align: center;
     font-size: clamp(2rem, 3vw, 2.5rem);
     margin-bottom: 4rem;
-    color: #D4AF37;
+    color: #0c0c0c;
 }
 
 .process-steps {
@@ -131,15 +139,17 @@
     grid-template-columns: auto 1fr;
     gap: 2rem;
     padding: 2rem;
-    background: rgba(212, 175, 55, 0.03);
+    background: #ffffff;
     border-left: 3px solid #D4AF37;
     border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
     transition: all 0.3s ease;
 }
 
 .process-step:hover {
-    background: rgba(212, 175, 55, 0.06);
     transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .step-number {
@@ -153,11 +163,11 @@
 .step-content h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #0c0c0c;
 }
 
 .step-content p {
-    color: #ccc;
+    color: #4a4a4a;
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
@@ -167,7 +177,7 @@
 }
 
 .step-deliverables strong {
-    color: #D4AF37;
+    color: #0c0c0c;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -187,13 +197,15 @@
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #D4AF37;
+    color: #8a6d20;
+    /* Darker gold for better contrast on light bg */
 }
 
 .process-image {
     border-radius: 12px;
     overflow: hidden;
     max-height: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .process-image img {
@@ -205,7 +217,7 @@
 /* Features Section */
 .service-features {
     padding: 6rem 0;
-    background: #000;
+    background: #ffffff;
 }
 
 .features-grid {
@@ -215,17 +227,18 @@
 }
 
 .feature-card {
-    background: #0a0a0a;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
-    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(212, 175, 55, 0.5);
 }
 
 .feature-image {
@@ -251,16 +264,17 @@
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #D4AF37;
 }
 
 .feature-content h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #0c0c0c;
 }
 
 .feature-content p {
-    color: #ccc;
+    color: #555;
     line-height: 1.7;
     font-size: 0.95rem;
 }
@@ -268,12 +282,12 @@
 /* Technologies Section */
 .service-technologies {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: #f5f5f5;
 }
 
 .technologies-description {
     text-align: center;
-    color: #ccc;
+    color: #4a4a4a;
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
@@ -292,21 +306,23 @@
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .tech-item:hover {
-    background: rgba(212, 175, 55, 0.1);
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: #D4AF37;
 }
 
 .tech-name {
     font-weight: 600;
     font-size: 1.1rem;
-    color: #fff;
+    color: #0c0c0c;
     margin-bottom: 0.3rem;
 }
 
@@ -320,7 +336,7 @@
 /* Case Studies Section */
 .service-case-studies {
     padding: 6rem 0;
-    background: #000;
+    background: #ffffff;
 }
 
 .case-studies-grid {
@@ -332,10 +348,11 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
-    background: #0a0a0a;
+    background: #ffffff;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .case-study-image {
@@ -356,11 +373,11 @@
 .case-study-content h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #D4AF37;
+    color: #0c0c0c;
 }
 
 .case-study-client {
-    color: #999;
+    color: #888;
     margin-bottom: 2rem;
     font-style: italic;
 }
@@ -379,7 +396,7 @@
 }
 
 .case-study-section p {
-    color: #ccc;
+    color: #4a4a4a;
     line-height: 1.7;
 }
 
@@ -401,7 +418,7 @@
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
-    color: #ccc;
+    color: #4a4a4a;
 }
 
 .case-study-results li::before {
@@ -415,12 +432,12 @@
 /* Pricing Section */
 .service-pricing {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: #f9f9f9;
 }
 
 .pricing-description {
     text-align: center;
-    color: #ccc;
+    color: #4a4a4a;
     margin-bottom: 3rem;
     font-size: 1.1rem;
 }
@@ -434,24 +451,26 @@
 }
 
 .pricing-card {
-    background: #000;
-    border: 2px solid rgba(212, 175, 55, 0.2);
+    background: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     padding: 2.5rem;
     text-align: center;
     position: relative;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .pricing-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.5);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+    border-color: #D4AF37;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .pricing-card.popular {
     border-color: #D4AF37;
-    background: rgba(212, 175, 55, 0.05);
+    background: #fffdf5;
+    /* Very subtle gold tint */
 }
 
 .popular-badge {
@@ -460,7 +479,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: #D4AF37;
-    color: #000;
+    color: #fff;
     padding: 0.4rem 1.5rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -472,11 +491,11 @@
 .pricing-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #D4AF37;
+    color: #0c0c0c;
 }
 
 .package-description {
-    color: #ccc;
+    color: #666;
     margin-bottom: 2rem;
     font-size: 0.95rem;
 }
@@ -492,8 +511,8 @@
     padding: 0.75rem 0;
     padding-left: 1.5rem;
     position: relative;
-    color: #ccc;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    color: #4a4a4a;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .package-features li::before {
@@ -505,7 +524,7 @@
 }
 
 .package-ideal {
-    color: #999;
+    color: #888;
     font-size: 0.9rem;
     margin-top: 1.5rem;
     margin-bottom: 2rem;
@@ -514,7 +533,7 @@
 /* FAQ Section */
 .service-faqs {
     padding: 6rem 0;
-    background: #000;
+    background: #ffffff;
 }
 
 .faq-list {
@@ -523,7 +542,7 @@
 }
 
 .faq-item {
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
 }
 
@@ -536,7 +555,7 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    color: #fff;
+    color: #0c0c0c;
     font-size: 1.1rem;
     font-weight: 500;
     text-align: left;
@@ -571,25 +590,25 @@
 }
 
 .faq-answer p {
-    color: #ccc;
+    color: #555;
     line-height: 1.8;
 }
 
 /* CTA Section */
 .service-cta {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+    background: #f5f5f5;
     text-align: center;
 }
 
 .cta-content h2 {
     font-size: clamp(2rem, 3vw, 2.5rem);
     margin-bottom: 1rem;
-    color: #D4AF37;
+    color: #0c0c0c;
 }
 
 .cta-content p {
-    color: #ccc;
+    color: #4a4a4a;
     font-size: 1.2rem;
     margin-bottom: 2.5rem;
 }

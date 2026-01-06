@@ -1,3 +1,4 @@
+import { FaLinkedin, FaInstagram, FaTwitter, FaBehance } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -19,16 +20,16 @@ const Footer = () => {
                         {/* Social Links */}
                         <div className="footer-social">
                             <a href="#" className="social-link" aria-label="LinkedIn">
-                                <span>in</span>
+                                <FaLinkedin />
                             </a>
                             <a href="#" className="social-link" aria-label="Instagram">
-                                <span>ig</span>
+                                <FaInstagram />
                             </a>
                             <a href="#" className="social-link" aria-label="Twitter">
-                                <span>tw</span>
+                                <FaTwitter />
                             </a>
                             <a href="#" className="social-link" aria-label="Behance">
-                                <span>be</span>
+                                <FaBehance />
                             </a>
                         </div>
                     </div>

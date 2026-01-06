@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaLinkedin, FaInstagram, FaTwitter, FaBehance, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -48,7 +49,7 @@ const Contact = () => {
                         <div className="contact-details">
                             <div className="contact-item">
                                 <div className="contact-icon-wrapper">
-                                    <span className="contact-icon">📍</span>
+                                    <FaMapMarkerAlt className="contact-icon" />
                                 </div>
                                 <div className="contact-item-content">
                                     <h4>Visit Us</h4>
@@ -59,7 +60,7 @@ const Contact = () => {
 
                             <div className="contact-item">
                                 <div className="contact-icon-wrapper">
-                                    <span className="contact-icon">✉️</span>
+                                    <FaEnvelope className="contact-icon" />
                                 </div>
                                 <div className="contact-item-content">
                                     <h4>Email Us</h4>
@@ -70,7 +71,7 @@ const Contact = () => {
 
                             <div className="contact-item">
                                 <div className="contact-icon-wrapper">
-                                    <span className="contact-icon">📞</span>
+                                    <FaPhone className="contact-icon" />
                                 </div>
                                 <div className="contact-item-content">
                                     <h4>Call Us</h4>
@@ -84,16 +85,16 @@ const Contact = () => {
                             <h4>Follow Us</h4>
                             <div className="social-links">
                                 <a href="#" className="social-link" aria-label="LinkedIn">
-                                    <span>in</span>
+                                    <FaLinkedin />
                                 </a>
                                 <a href="#" className="social-link" aria-label="Instagram">
-                                    <span>ig</span>
+                                    <FaInstagram />
                                 </a>
                                 <a href="#" className="social-link" aria-label="Twitter">
-                                    <span>tw</span>
+                                    <FaTwitter />
                                 </a>
                                 <a href="#" className="social-link" aria-label="Behance">
-                                    <span>be</span>
+                                    <FaBehance />
                                 </a>
                             </div>
                         </div>
