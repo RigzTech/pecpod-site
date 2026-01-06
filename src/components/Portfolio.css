@@ -1,0 +1,243 @@
+.portfolio {
+    padding-top: 4rem;
+}
+
+.portfolio-header {
+    margin-bottom: 3rem;
+}
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--color-white);
+    border-color: var(--color-gold);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+/* Full Width Container Override for Portfolio */
+.portfolio .container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* CSS Grid Masonry (Restored for Vertical Spans) */
+.masonry-grid {
+    display: grid;
+    /* auto-fit stretches columns to fill width nicely */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 5px;
+    grid-auto-rows: 350px;
+    /* Fixed row height for consistency */
+    grid-auto-flow: dense;
+    /* Crucial: Backfills gaps */
+    padding: 5px;
+}
+
+/* Size Variants & Spans */
+.masonry-item {
+    transition: all 0.3s ease;
+    background: #111827;
+    overflow: hidden;
+    position: relative;
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 100%;
+    /* Ensure filling grid cell */
+}
+
+/* Wide: 2 Columns, 1 Row */
+.masonry-item.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Tall: 1 Column, 2 Rows (New vertical emphasis) */
+.masonry-item.tall,
+.masonry-item.medium {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* Large: 2 Columns, 2 Rows (Bigger) */
+.masonry-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Small: 1 Col, 1 Row (Default) */
+.masonry-item.small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Ensure images fill their containers */
+.masonry-item .project-card,
+.masonry-item .project-image-wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    /* Reference image has sharp corners */
+}
+
+.masonry-item .project-image-wrapper {
+    padding-bottom: 0;
+    /* Remove aspect ratio hack */
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background: #111827;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    height: 100%;
+}
+
+.project-card:hover {
+    z-index: 10;
+    /* Bring to front on hover */
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Foreground Image (The Content) */
+/* Foreground Image (The Content) */
+.project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Reverted to cover as requested */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effect: Scale gently */
+.project-card:hover .project-img {
+    transform: scale(1.1);
+}
+
+/* Overlay Styles */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-content-overlay {
+    color: var(--color-white);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    width: 100%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.project-card:hover .project-content-overlay {
+    transform: translateY(0);
+}
+
+.project-category-overlay {
+    display: block;
+    font-size: 0.9rem;
+    color: #ffffff;
+    /* Explicitly White */
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    /* Bold */
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.project-title-overlay {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: #ffffff;
+    /* Explicitly White */
+    line-height: 1.1;
+    margin-bottom: 0;
+    font-weight: 800;
+    /* Extra Bold */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.action-btn:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* project-info removed from DOM, styles removed */
+
+@media (max-width: 768px) {
+    .masonry-item {
+        height: 300px;
+    }
+
+    .masonry-item.small,
+    .masonry-item.wide {
+        flex-basis: 100%;
+        /* Stack on mobile */
+    }
+}
+
+/* Play Button Overlay */
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+}
+
+.project-card:hover .play-button-overlay {
+    background: rgba(197, 160, 89, 0.9);
+    border-color: transparent;
+    transform: translate(-50%, -50%) scale(1.1);
+}

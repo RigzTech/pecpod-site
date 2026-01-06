@@ -1,0 +1,1057 @@
+.about {
+    position: relative;
+    padding-top: 0;
+    background: linear-gradient(to bottom, var(--color-white) 0%, #fafafa 50%, var(--color-white) 100%);
+    color: var(--color-black);
+    overflow-x: hidden;
+}
+
+/* Master Hero Section */
+/* Master Hero Section */
+.about-master-hero {
+    height: 90vh;
+    min-height: 600px;
+    /* Ensure content doesn't get crushed */
+    width: 100vw;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 6rem;
+    overflow: hidden;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.master-hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.master-label {
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+}
+
+.master-title {
+    font-family: var(--font-display);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.hero-accent {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1em;
+    margin: 1rem 0;
+    text-transform: lowercase;
+}
+
+.big-text {
+    font-size: clamp(2.5rem, 7vw, 6.5rem);
+    line-height: 0.85;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+}
+
+.text-gold.big-text {
+    /* Visual adjustment to better align with Creativity */
+    font-size: clamp(2.5rem, 7vw, 6.5rem);
+    margin-top: -0.5rem;
+    /* Slight overlap or pull up */
+}
+
+.master-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    /* Added margin bottom for CTA */
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+}
+
+/* Relocated CTA Button (White Section) */
+.intro-cta-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    /* Space from the top of white section */
+    margin-bottom: -2rem;
+    /* Pull it closer to the intro text likely */
+    position: relative;
+    z-index: 10;
+}
+
+.premium-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--color-gold);
+    /* Gold works effectively on white too */
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 1rem 0;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.premium-hero-btn .btn-text {
+    position: relative;
+    z-index: 1;
+}
+
+.premium-hero-btn .btn-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(197, 160, 89, 0.3);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.premium-hero-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.premium-hero-btn:hover::after {
+    transform: scaleX(1);
+}
+
+.premium-hero-btn:hover .btn-line {
+    transform: scaleX(0);
+}
+
+.premium-hero-btn .btn-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.premium-hero-btn:hover .btn-arrow {
+    transform: translateX(10px);
+}
+
+/* Specific tweaks for white background visibility if needed */
+.dark-mode-btn {
+    /* Existing gold color is fine, but ensuring contrast */
+    font-weight: 600;
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px var(--color-white);
+    color: transparent;
+    transition: all 0.5s ease;
+}
+
+.about-master-hero:hover .text-outline {
+    -webkit-text-stroke: 1px var(--color-gold);
+    color: rgba(197, 160, 89, 0.1);
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+/* Scroll Indicator - Adjusted */
+.master-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.5;
+    z-index: 4;
+}
+
+/* Removed span style since text was removed */
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--color-gold), transparent);
+    animation: scrollFlow 2s ease-in-out infinite;
+}
+
+@keyframes scrollFlow {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    51% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
+/* Adjust secondary hero spacing */
+.about-intro {
+    padding-top: 4rem;
+}
+
+.about-hero {
+    margin-bottom: 8rem;
+    position: relative;
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    color: var(--color-black);
+}
+
+.text-stroke {
+    -webkit-text-stroke: 1px var(--color-black);
+    color: transparent;
+    transition: all 0.5s ease;
+}
+
+.hero-title:hover .text-stroke {
+    color: var(--color-black);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 3rem;
+}
+
+.highlight {
+    color: var(--color-black);
+    font-weight: 600;
+    position: relative;
+    white-space: nowrap;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(197, 160, 89, 0.3);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.highlight:hover::after {
+    height: 100%;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-black);
+    font-family: var(--font-display);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-top: 0.25rem;
+}
+
+/* Visuals */
+.hero-visuals {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating-card {
+    position: absolute;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    border: 4px solid var(--color-white);
+}
+
+.floating-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-1 {
+    width: 280px;
+    height: 350px;
+    z-index: 2;
+    transform: rotate(-5deg);
+    left: 10%;
+    top: 15%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.card-2 {
+    width: 300px;
+    height: 380px;
+    z-index: 3;
+    right: 5%;
+    top: 25%;
+    transform: rotate(5deg);
+    animation: float 7s ease-in-out infinite 1s;
+}
+
+.card-3 {
+    width: 240px;
+    height: 300px;
+    z-index: 1;
+    left: 30%;
+    bottom: 10%;
+    transform: rotate(-2deg);
+    animation: float 8s ease-in-out infinite 2s;
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+.card-1:hover,
+.card-2:hover,
+.card-3:hover {
+    z-index: 10;
+    transform: scale(1.05) rotate(0deg);
+    filter: none;
+    opacity: 1;
+}
+
+.decorative-circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 900px) {
+    .about-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-label {
+        margin-top: 2rem;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visuals {
+        height: 500px;
+        margin-top: 2rem;
+    }
+
+    .card-1 {
+        width: 200px;
+        height: 250px;
+        left: 0;
+    }
+
+    .card-2 {
+        width: 220px;
+        height: 280px;
+    }
+
+    .card-3 {
+        width: 180px;
+        height: 220px;
+    }
+}
+
+/* Our Story */
+.our-story-section {
+    padding: 5rem 0;
+    margin-bottom: 5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    color: var(--color-mid-grey);
+    margin-bottom: 2rem;
+}
+
+.quote {
+    border-left: 4px solid var(--color-gold);
+    padding-left: 1.5rem;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--color-black);
+    margin-top: 3rem;
+}
+
+.quote footer {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-mid-grey);
+    font-style: normal;
+}
+
+/* Values - Split Layout */
+.values-section {
+    margin-bottom: 8rem;
+    background: #fff;
+    padding: 0;
+    text-align: left;
+}
+
+.values-container-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.values-content-side {
+    padding-right: 2rem;
+}
+
+.subsection-title-left {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-black);
+    font-weight: 700;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-gold);
+}
+
+.values-list-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.value-item-accordion-clean {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.value-header-clean {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.value-header-clean:hover .value-title-clean {
+    color: var(--color-gold);
+}
+
+.value-number {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    font-weight: 700;
+    margin-top: 0.2rem;
+}
+
+.value-header-text {
+    flex: 1;
+}
+
+.value-title-clean {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.value-desc-clean {
+    font-size: 1rem;
+    color: var(--color-mid-grey);
+    line-height: 1.5;
+}
+
+.toggle-icon-clean {
+    font-size: 1.5rem;
+    color: var(--color-black);
+    font-weight: 300;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.toggle-icon-clean.expanded {
+    transform: rotate(45deg);
+    color: var(--color-gold);
+}
+
+.value-content-inner-clean {
+    padding-top: 1.5rem;
+    padding-left: 3.5rem;
+}
+
+/* Values Image Side - Creative Composition */
+.values-image-side {
+    position: relative;
+    height: 100%;
+    min-height: 600px;
+}
+
+.values-image-wrapper {
+    position: sticky;
+    top: 100px;
+    height: 600px;
+    border-radius: 20px;
+    /* overflow: hidden; Removed to let floating elements break out slightly */
+}
+
+/* Base Layer */
+.base-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.base-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: transform 0.7s ease;
+}
+
+.base-layer:hover img {
+    transform: scale(1.05);
+}
+
+.layer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(197, 160, 89, 0.2) 100%);
+}
+
+/* Decorative Circle */
+.deco-circle {
+    position: absolute;
+    top: -5%;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Floating Accent Image */
+.float-image {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    width: 240px;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.15);
+    border: 4px solid #fff;
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styles for the Overlay Card */
+.values-overlay-card {
+    position: absolute;
+    bottom: 10%;
+    left: -2rem;
+    /* Pulling smoothly to the left */
+    background: rgba(20, 20, 20, 0.95);
+    /* Dark card */
+    padding: 2rem;
+    border-radius: 4px;
+    z-index: 4;
+    border-left: 4px solid var(--color-gold);
+    color: #fff;
+    min-width: 260px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.card-indicator {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card-indicator span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card-indicator span.active {
+    background: var(--color-gold);
+    width: 24px;
+    border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+    .values-image-side {
+        min-height: 500px;
+        order: -1;
+    }
+
+    .base-layer {
+        width: 100%;
+    }
+
+    .float-image {
+        width: 180px;
+        height: 220px;
+        right: 1rem;
+        bottom: 2rem;
+    }
+
+    .values-overlay-card {
+        left: 1rem;
+        bottom: 1rem;
+    }
+}
+
+.values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-item-accordion {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-item-accordion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-gold);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.value-item-accordion:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 8px 24px rgba(197, 160, 89, 0.15);
+    transform: translateY(-4px);
+}
+
+.value-item-accordion:hover::before {
+    transform: scaleY(1);
+}
+
+.value-header {
+    margin-bottom: 1rem;
+}
+
+.value-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.value-desc {
+    font-size: 1rem;
+    color: var(--color-mid-grey);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.value-toggle,
+.team-toggle {
+    background: none;
+    border: 2px solid var(--color-black);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-black);
+    cursor: pointer;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.value-toggle:hover,
+.team-toggle:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.toggle-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.toggle-icon.expanded {
+    transform: rotate(180deg);
+}
+
+.value-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    opacity: 0;
+}
+
+.value-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.value-content-inner {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.value-full-desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.value-principles {
+    list-style: none;
+    padding: 0;
+}
+
+.value-principles li {
+    padding: 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.value-principles li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+/* Team */
+.team-section {
+    margin-bottom: 6rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.team-card-expandable {
+    padding: 2rem;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.team-card-expandable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-gold);
+}
+
+.team-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.team-initials {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-mid-grey);
+}
+
+.team-info {
+    text-align: left;
+}
+
+.team-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.team-role {
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.team-bio {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    opacity: 0;
+}
+
+.team-bio.expanded {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.team-bio p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.team-expertise {
+    margin-top: 1rem;
+}
+
+.team-expertise strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+}
+
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.expertise-tag {
+    padding: 0.4rem 0.8rem;
+    background: #f0f0f0;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-black);
+    transition: all 0.3s ease;
+}
+
+.expertise-tag:hover {
+    background: var(--color-gold);
+    color: var(--color-white);
+}
+
+/* CTA */
+.about-cta {
+    padding: 5rem 0;
+    background: var(--color-black);
+    color: var(--color-white);
+    border-radius: 16px;
+    margin-bottom: 4rem;
+}
+
+.about-cta h3 {
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-cta p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background: var(--color-gold);
+    color: var(--color-black);
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--color-white);
+}
+
+@media (max-width: 768px) {
+    .about-collage {
+        height: 200px;
+        grid-template-columns: 1fr;
+    }
+
+    .collage-item {
+        display: none;
+    }
+
+    .collage-item.item-1 {
+        display: block;
+        grid-column: auto;
+    }
+}

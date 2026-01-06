@@ -1,0 +1,401 @@
+.hero-minimal {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-white);
+}
+
+.hero-minimal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c5a059' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.hero-minimal-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    /* Increased max-width */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* Center align text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-minimal-title {
+    font-size: clamp(4rem, 10vw, 8rem);
+    /* Responsive clamp */
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    color: var(--color-black);
+    width: 100%;
+}
+
+.hero-gold-word {
+    color: var(--color-gold);
+    display: inline-block;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--color-mid-grey);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero-explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-black);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-bottom: 20px;
+    /* Space for movement */
+}
+
+.hero-explore:hover {
+    color: var(--color-gold);
+    letter-spacing: 0.3em;
+}
+
+.hero-explore svg {
+    animation: float-arrow 2s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.hero-explore:hover svg {
+    animation-play-state: paused;
+    transform: translateY(5px) scale(1.1);
+}
+
+@keyframes float-arrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* Kinetic Gallery System */
+.hero-kinetic-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+    perspective: 1000px;
+    /* Enable 3D depth */
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* Layer 1: Ambient Orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    /* Heavy soft blur */
+    opacity: 0.4;
+    animation: breathe 15s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.4), transparent 70%);
+    /* Slightly more opacity for impact */
+    top: -20%;
+    left: -15%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.25), transparent 70%);
+    bottom: -30%;
+    right: -20%;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+    top: 35%;
+    left: 35%;
+    animation-duration: 20s;
+}
+
+/* Layer 2: Shards & Geometry */
+.shard {
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.glass-shard-1 {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    top: 20%;
+    right: 15%;
+    transform: rotate(45deg);
+    animation: float-3d 12s infinite ease-in-out;
+}
+
+.glass-shard-2 {
+    width: 80px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(3px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    bottom: 25%;
+    left: 10%;
+    transform: rotate(-15deg);
+    animation: float-3d 15s infinite ease-in-out reverse;
+}
+
+.gold-geo-1 {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-gold), #e5c985);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    /* Triangle */
+    top: 15%;
+    left: 20%;
+    opacity: 0.8;
+    filter: drop-shadow(0 10px 20px rgba(197, 160, 89, 0.4));
+    animation: rotate-float 18s infinite linear;
+}
+
+.gold-geo-2 {
+    width: 30px;
+    height: 30px;
+    background: var(--color-black);
+    border: 1px solid var(--color-gold);
+    top: 60%;
+    right: 25%;
+    transform: rotate(45deg);
+    animation: float 20s infinite ease-in-out -5s;
+}
+
+.wireframe-cube {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    top: 35%;
+    left: 80%;
+    animation: rotate-3d 25s infinite linear;
+}
+
+/* Layer 3: Gold Dust */
+.dust-particle {
+    position: absolute;
+    background: var(--color-gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle-rise 10s infinite linear;
+}
+
+/* Randomize Dust */
+/* Randomize Dust */
+.dust-1 {
+    width: 6px;
+    height: 6px;
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.dust-2 {
+    width: 4px;
+    height: 4px;
+    left: 25%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.dust-3 {
+    width: 8px;
+    height: 8px;
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 5s;
+}
+
+.dust-4 {
+    width: 5px;
+    height: 5px;
+    left: 55%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.dust-5 {
+    width: 7px;
+    height: 7px;
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.dust-6 {
+    width: 4px;
+    height: 4px;
+    left: 85%;
+    animation-duration: 13s;
+    animation-delay: 6s;
+}
+
+.dust-7 {
+    width: 6px;
+    height: 6px;
+    left: 15%;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+.dust-8 {
+    width: 5px;
+    height: 5px;
+    left: 35%;
+    animation-duration: 14s;
+    animation-delay: 7s;
+}
+
+.dust-9 {
+    width: 8px;
+    height: 8px;
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.dust-10 {
+    width: 5px;
+    height: 5px;
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 5s;
+}
+
+/* Complex Animations */
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+}
+
+@keyframes float-3d {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(20px, -40px, 50px) rotate(5deg);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+}
+
+@keyframes rotate-float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+@keyframes rotate-3d {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes sparkle-rise {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: translateY(80vh) scale(1);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateY(20vh) scale(1);
+    }
+
+    100% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-minimal-title {
+        font-size: 4rem;
+    }
+}

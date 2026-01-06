@@ -1,0 +1,137 @@
+.filter-bar {
+    background: #111827;
+    /* Exact dark navy from reference */
+    padding: 20px 0;
+    /* py-5 equivalent */
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 900;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* shadow-2xl */
+}
+
+.filter-bar-sticky {
+    position: sticky;
+    top: 70px;
+    background: #111827;
+    backdrop-filter: none;
+    /* Reference is opaque */
+}
+
+.filter-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.filter-bar-content {
+    display: flex;
+    gap: 2rem;
+    /* 32px gap */
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.25rem 2rem 0.25rem 0;
+    /* py-1 px-8 equivalent */
+    align-items: center;
+    width: 100%;
+}
+
+.filter-bar-content::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    flex-shrink: 0;
+    padding: 0 !important;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    /* Force white text */
+    border: none !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    height: auto;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    /* Ensure full visibility */
+}
+
+.filter-btn:hover {
+    color: #FFC72C !important;
+    /* Gold on hover */
+}
+
+.filter-btn-active {
+    color: #FFC72C;
+    /* rgb(255, 199, 44) */
+}
+
+.filter-btn-active:hover {
+    color: #FFC72C;
+}
+
+/* Gold Underline Logic - Exact match */
+.filter-btn-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #D4A017;
+    /* rgb(212, 160, 23) */
+    box-shadow: none;
+    /* No shadow in reference */
+}
+
+/* Scroll Arrow */
+.filter-scroll-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+    padding: 0;
+}
+
+.filter-scroll-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+.filter-scroll-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-bar-sticky {
+        top: 60px;
+    }
+
+    .filter-bar-content {
+        gap: 1.5rem;
+    }
+}
