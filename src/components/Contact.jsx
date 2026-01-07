@@ -100,7 +100,7 @@ const Contact = () => {
                     <div className="contact-form-wrapper">
                         <form
                             className="contact-form"
-                            action="https://formsubmit.co/fredrickarara@gmail.com"
+                            action="https://formsubmit.co/brianalili4@gmail.com"
                             method="POST"
                         >
                             {/* FormSubmit Configuration */}

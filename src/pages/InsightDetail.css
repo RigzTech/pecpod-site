@@ -25,15 +25,19 @@
 }
 
 .document-header {
-    padding: 60px 0 40px;
-    text-align: center;
-    max-width: 900px;
+    padding: 20px 0 20px;
+    /* Reduced from 60px 0 40px */
+    text-align: left;
+    /* Aligned left to match body */
+    max-width: 800px;
+    /* Match body width */
     margin: 0 auto;
 }
 
 .header-meta {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Aligned left */
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
@@ -51,7 +55,8 @@
 }
 
 .read-time {
-    color: #888;
+    color: #444;
+    /* Darker */
     font-size: 0.9rem;
 }
 
@@ -60,11 +65,13 @@
     font-weight: 800;
     margin-bottom: 20px;
     line-height: 1.1;
-    color: var(--color-text-primary);
+    color: var(--color-black);
+    /* Was color-text-primary which might be undefined or light */
 }
 
 .document-date {
-    color: var(--color-text-secondary);
+    color: #444;
+    /* Darker grey */
     font-size: 1.1rem;
 }
 
@@ -89,24 +96,26 @@
 .document-body {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: var(--color-text-primary);
+    color: var(--color-black);
+    /* Darker */
     font-family: 'Georgia', serif;
-    /* Magazine style font */
 }
 
 .document-body h3 {
     font-family: var(--font-primary);
     font-size: 2rem;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    color: var(--color-heading);
+    margin-top: 40px;
+    /* Reduced */
+    margin-bottom: 20px;
+    color: var(--color-black);
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .document-body p {
-    margin-bottom: 30px;
-    color: #ccc;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark grey instead of #ccc */
 }
 
 .document-body strong {
@@ -155,9 +164,10 @@
 }
 
 .document-body li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 1.2rem;
-    color: #ccc;
+    color: #333;
+    /* Darker */
     padding-left: 10px;
 }
 
