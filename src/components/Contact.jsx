@@ -10,11 +10,7 @@ const Contact = () => {
         message: ''
     });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Add form submission logic here
-    };
+
 
     const handleChange = (e) => {
         setFormData({
@@ -102,7 +98,16 @@ const Contact = () => {
 
                     {/* Contact Form */}
                     <div className="contact-form-wrapper">
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        <form
+                            className="contact-form"
+                            action="https://formsubmit.co/fredrickarara@gmail.com"
+                            method="POST"
+                        >
+                            {/* FormSubmit Configuration */}
+                            <input type="hidden" name="_subject" value="New Inquiry from PecPod Website" />
+                            <input type="hidden" name="_captcha" value="true" />
+                            <input type="hidden" name="_template" value="table" />
+
                             <h3 className="form-heading">Send us a Message</h3>
 
                             <div className="form-row">
@@ -111,6 +116,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         id="name"
+                                        name="name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         placeholder="John Doe"
@@ -123,6 +129,7 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         id="email"
+                                        name="email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         placeholder="john@example.com"
@@ -135,6 +142,7 @@ const Contact = () => {
                                 <label htmlFor="service">Service Interest</label>
                                 <select
                                     id="service"
+                                    name="service"
                                     value={formData.service}
                                     onChange={handleChange}
                                 >
@@ -152,6 +160,7 @@ const Contact = () => {
                                 <label htmlFor="message">Your Message *</label>
                                 <textarea
                                     id="message"
+                                    name="message"
                                     rows="5"
                                     value={formData.message}
                                     onChange={handleChange}
