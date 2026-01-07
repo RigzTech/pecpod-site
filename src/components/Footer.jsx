@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FaLinkedin, FaInstagram, FaTwitter, FaBehance } from 'react-icons/fa';
 import './Footer.css';
 
@@ -50,11 +51,11 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4 className="footer-heading">Services</h4>
                         <ul className="footer-links">
-                            <li><a href="/services/digitalisation">Digitalisation</a></li>
-                            <li><a href="/services/brand-identity">Brand Identity</a></li>
-                            <li><a href="/services/report-design">Report Design</a></li>
-                            <li><a href="/services/messaging">Messaging</a></li>
-                            <li><a href="/services/print-design">Print Design</a></li>
+                            <li><Link to="/services/corporate-design">Corporate Design</Link></li>
+                            <li><Link to="/services/report-design">Publications - Report Design</Link></li>
+                            <li><Link to="/services/brand-identity">Strategy - Brand Identity</Link></li>
+                            <li><Link to="/services/print-design">Packaging & Print Design</Link></li>
+                            <li><Link to="/services/event-design">Event Design Services</Link></li>
                         </ul>
                     </div>
 

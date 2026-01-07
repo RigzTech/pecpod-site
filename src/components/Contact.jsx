@@ -147,11 +147,11 @@ const Contact = () => {
                                     onChange={handleChange}
                                 >
                                     <option value="">Select a service...</option>
-                                    <option value="Digitalisation">Digitalisation</option>
-                                    <option value="Brand Identity">Brand Identity</option>
-                                    <option value="Report Design">Report Design</option>
-                                    <option value="Messaging">Messaging</option>
-                                    <option value="Print Design">Print Design</option>
+                                    <option value="Corporate Design">Corporate Design</option>
+                                    <option value="Publications - Report Design">Publications - Report Design</option>
+                                    <option value="Strategy - Brand Identity">Strategy - Brand Identity</option>
+                                    <option value="Packaging and printing - Print Design">Packaging & Print Design</option>
+                                    <option value="Event Design Services">Event Design Services</option>
                                     <option value="Other">Other</option>
                                     <option value="consultation">General Consultation</option>
                                 </select>

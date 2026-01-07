@@ -8,102 +8,112 @@ const Services = () => {
 
     const processSteps = [
         {
-            title: 'Strategy',
-            description: 'We build the foundation. Research, insights, positioning, and brand architecture.',
+            title: 'Research',
+            description: 'We immerse ourselves in your brand ecosystem. By analyzing current guidelines and reviewing historical assets, we ensure every new creation honors your established identity while identifying opportunities for evolution. We map out the visual terrain before drawing a single line.',
             icon: '01'
         },
         {
-            title: 'Identity',
-            description: 'We create the visual expression. Logo design, visual identity systems, and brand guidelines.',
+            title: 'Design',
+            description: 'We translate strategy into visuals. Developing layouts that project your specific ambience, we present curated options for your review. Through a structured iterative process, we refine these concepts until they perfectly align with your vision.',
             icon: '02'
         },
         {
-            title: 'Roll-out',
-            description: 'We bring it to life. Execution across print, digital, packaging, and web platforms.',
+            title: 'Content',
+            description: 'Design and narrative work in unison. As we craft the visual experience, we collaborate closely with your team to integrate copy and imagery. This parallel development ensures that form and function—and image and word—reinforce each other seamlessly.',
             icon: '03'
+        },
+        {
+            title: 'Testing',
+            description: 'Precision before presentation. We rigorously review every pixel and paragraph against the project standards. This pre-delivery phase is our quality assurance guarantee, ensuring that what you see is polished, professional, and ready for the world.',
+            icon: '04'
+        },
+        {
+            title: 'Delivery',
+            description: 'The final handover. Upon approval, we package all deliverables according to industry standards. We ensure you have everything needed to launch, print, or publish immediately, completing the project on time and on brief.',
+            icon: '05'
         }
     ];
 
     const services = [
         {
-            id: 'digitalisation',
-            title: 'Digitalisation',
-            shortDesc: 'We help you navigate the digital landscape with custom solutions that unleash new products and enhance your online presence.',
-            fullDesc: 'Transform your business with cutting-edge digital solutions. We create responsive websites, web applications, and digital experiences that engage your audience and drive results. Our team combines technical expertise with creative vision to deliver solutions that are both beautiful and functional.',
-            features: ['Web Design', 'Digital Strategy', 'Interactive Layouts', 'E-commerce Solutions'],
+            id: 'corporate-design',
+            title: 'Corporate Design',
+            shortDesc: 'Establishing visual authority for organizations through cohesive, legacy-building design systems.',
+            fullDesc: 'A strong corporate identity is the bedrock of organizational trust. We specialize in crafting distinguished visual systems for Non-Profits and Corporations that command respect. From the logo to the letterhead, we ensure every asset reflects your mission’s gravity and your values’ clarity.',
+            features: ['Visual Authority', 'Stationery Systems', 'Brand Architecture', 'Corporate Guidelines'],
             details: [
-                'Custom website development',
-                'Progressive web applications',
-                'Digital transformation consulting',
-                'User experience optimization',
-                'Mobile-first responsive design'
+                'Strategic logo development',
+                'Comprehensive stationery suites',
+                'Visual identity systems',
+                'Corporate branding governance',
+                'Detailed brand guidelines'
             ],
-            image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
+            image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
             imageClass: 'service-img-1'
         },
         {
-            id: 'brand-identity',
-            title: 'Brand Identity Design',
-            shortDesc: 'Components of your company character that make it identifiable and unique with purpose, consistency, emotion, and loyalty.',
-            fullDesc: 'Build a memorable brand that resonates with your audience. We craft comprehensive brand identities that tell your story, differentiate you from competitors, and create lasting emotional connections with your customers.',
-            features: ['Logo Design', 'Brand Strategy', 'Visual Identity', 'Color Palette'],
-            details: [
-                'Logo and mark creation',
-                'Brand guidelines development',
-                'Typography systems',
-                'Color palette selection',
-                'Brand voice and messaging'
-            ],
-            image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
-            imageClass: 'service-img-2'
-        },
-        {
             id: 'report-design',
-            title: 'Report Design',
-            shortDesc: 'Top-notch publications for Non-Profit Organizations ensuring effective communication through professional layout and design.',
-            fullDesc: 'Create impactful reports that communicate your message clearly and professionally. We specialize in designing annual reports, strategic plans, and publications that engage readers and showcase your achievements.',
-            features: ['Annual Reports', 'Strategic Plans', 'Book Layouts', 'Infographics'],
+            title: 'Publications - Report Design',
+            shortDesc: 'Transforming complex data into compelling narratives through editorial excellence and precision layout.',
+            fullDesc: 'Your annual reports and strategic plans are more than documents; they are testaments to your impact. We turn dense information into accessible, visually engaging publications. Our editorial design ensures your achievements are not just recorded, but celebrated and understood.',
+            features: ['Annual Reports', 'Strategic Plans', 'Editorial Layout', 'Data Visualization'],
             details: [
-                'Annual report design',
-                'Strategic plan layouts',
-                'Data visualization',
-                'Editorial design',
-                'Print-ready file preparation'
+                'High-impact annual reports',
+                'Clear strategic plan layouts',
+                'Infographic data visualization',
+                'Professional editorial design',
+                'Print & digital ready formatting'
             ],
             image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
             imageClass: 'service-img-3'
         },
         {
-            id: 'messaging',
-            title: 'Messaging',
-            shortDesc: 'We craft the right narrative for your brand, ensuring your message resonates with the right people through strategic communication.',
-            fullDesc: 'Develop compelling narratives that connect with your audience. Our messaging services help you articulate your value proposition, define your brand voice, and create content that drives engagement and conversions.',
-            features: ['Content Strategy', 'Brand Voice', 'Article Drafting', 'Copywriting'],
+            id: 'brand-identity',
+            title: 'Strategy - Brand Identity Design',
+            shortDesc: 'Forging unique brand characters that blend emotion, consistency, and purpose to drive loyalty.',
+            fullDesc: 'True branding is about soul, not just surface. We fuse strategy with aesthetics to build brand identities that resonate on an emotional level. By defining your purpose and visualizing your promise, we create brands that employees rally behind and customers remain loyal to.',
+            features: ['Brand Strategy', 'Visual Systems', 'Tone of Voice', 'Emotional Resonance'],
             details: [
-                'Brand messaging framework',
-                'Content strategy development',
-                'Copywriting and editing',
-                'Tone of voice guidelines',
-                'Marketing communications'
+                'Brand positioning statements',
+                'Comprehensive strategy',
+                'Curated color palettes',
+                'Visual diction and tone',
+                'Memorable tagline development'
             ],
-            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80',
-            imageClass: 'service-img-4'
+            image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
+            imageClass: 'service-img-2'
         },
         {
             id: 'print-design',
-            title: 'Print Design',
-            shortDesc: 'Sustainable processes producing visual communications and presentations for your targeted audience, purposely designed for printing.',
-            fullDesc: 'Bring your brand to life in print. From business cards to large-format displays, we create print materials that make a lasting impression. Our designs are optimized for production while maintaining the highest quality standards.',
-            features: ['Packaging', 'Marketing Kits', 'Signage', 'Collateral'],
+            title: 'Packaging and Printing - Print Design',
+            shortDesc: 'Tactile visual communications designed for the physical world, optimized for sustainability and impact.',
+            fullDesc: 'In a digital age, print remains the premium touchpoint. We are masters of the physical medium, creating packaging and marketing collateral that invites touch. Our sustainable production processes ensure your physical presence is as responsible as it is beautiful.',
+            features: ['Premium Packaging', 'Marketing Kits', 'Wayfinding', 'Tactile Collateral'],
             details: [
-                'Packaging design',
-                'Marketing collateral',
-                'Signage and wayfinding',
-                'Business stationery',
-                'Print production management'
+                'Bespoke packaging design',
+                'High-end marketing collateral',
+                'Environmental signage',
+                'Corporate stationery',
+                'Production management'
             ],
             image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80',
             imageClass: 'service-img-5'
+        },
+        {
+            id: 'event-design',
+            title: 'Event Design Services',
+            shortDesc: 'Immersive spatial experiences from exhibition stands to large-format visual domination.',
+            fullDesc: 'Your brand, magnified. We turn physical spaces into immersive brand experiences. Whether it is a custom-built exhibition stand or a city-block-sized banner, we design for scale and impact. We help you channel your inner showman to captivate audiences in the real world.',
+            features: ['Exhibition Stands', 'Large Format', 'Spatial Branding', 'Event Strategy'],
+            details: [
+                'Custom exhibition stands',
+                'Large format printing',
+                'Complete event branding',
+                'Directional signage systems',
+                'Promotional displays'
+            ],
+            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
+            imageClass: 'service-img-4'
         }
     ];
 
@@ -171,21 +181,23 @@ const Services = () => {
                     </div>
                 </div>
 
-                {/* Process / Approach Section */}
-                <div className="process-section">
+                {/* Process Section */}
+                <section className="process-section">
                     <h2 className="section-title-center">Our Approach</h2>
-                    <div className="process-grid">
+                    <div className="process-timeline">
                         {processSteps.map((step, index) => (
-                            <div key={index} className="process-card hover-lift">
-                                <span className="process-number">{step.icon}</span>
-                                <h3 className="process-title">{step.title}</h3>
-                                <p className="process-desc">{step.description}</p>
+                            <div key={index} className="process-step-item">
+                                <div className="process-step-number">{step.icon}</div>
+                                <div className="process-step-content">
+                                    <h3>{step.title}</h3>
+                                    <p>{step.description}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
-                </div>
+                </section>
 
-                {/* Detailed Services List with Accordions */}
+                {/* Detailed Services List - Original What We Do Style */}
                 <div className="services-list">
                     <h2 className="section-title-center">What We Do</h2>
                     {services.map((service, index) => (

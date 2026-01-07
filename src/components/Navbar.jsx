@@ -31,11 +31,11 @@ const Navbar = () => {
                         <li className="nav-item-dropdown">
                             <NavLink to="/services" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Services</NavLink>
                             <div className="dropdown-menu">
-                                <NavLink to="/services/digitalisation" className="dropdown-link">Digitalisation</NavLink>
-                                <NavLink to="/services/brand-identity" className="dropdown-link">Brand Identity</NavLink>
+                                <NavLink to="/services/corporate-design" className="dropdown-link">Corporate Design</NavLink>
                                 <NavLink to="/services/report-design" className="dropdown-link">Report Design</NavLink>
-                                <NavLink to="/services/messaging" className="dropdown-link">Messaging</NavLink>
+                                <NavLink to="/services/brand-identity" className="dropdown-link">Brand Identity</NavLink>
                                 <NavLink to="/services/print-design" className="dropdown-link">Print Design</NavLink>
+                                <NavLink to="/services/event-design" className="dropdown-link">Event Design</NavLink>
                             </div>
                         </li>
                         <li><NavLink to="/insights" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Insights</NavLink></li>

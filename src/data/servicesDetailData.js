@@ -1,127 +1,132 @@
 // Comprehensive service detail data for all services
 export const servicesDetailData = {
-    'digitalisation': {
-        id: 'digitalisation',
-        title: 'Digitalisation',
-        tagline: 'Transform Your Digital Presence',
-        heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80',
+    'corporate-design': {
+        id: 'corporate-design',
+        title: 'Corporate Design',
+        tagline: 'Corporate Design',
+        heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80',
 
         overview: {
-            title: 'Digital Solutions That Drive Results',
-            description: `We create digital experiences that not only look stunning but drive measurable business results. Our digitalisation services combine cutting-edge technology with strategic thinking to deliver websites, web applications, and digital platforms that engage users and convert visitors into customers.
+            title: 'Identity for Non-Profits & Organizations',
+            description: `We specialize in helping Non Profit Organizations find their identities through logo designs, corporate stationery, visual identity and branding.
             
-            We focus on user experience, performance optimization, and scalability to ensure your digital products grow with your business. Whether you need a corporate website, e-commerce platform, or custom web application, we bring technical expertise and creative vision to every project.`,
-            image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80'
+            A strong corporate identity is essential for building trust and recognition. We create professional, cohesive visual systems that reflect your organization's mission and values across all touchpoints.`,
+            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80'
         },
 
         process: {
-            title: 'Our Digital Development Process',
+            title: 'Our Corporate Design Process',
             steps: [
                 {
                     number: '01',
-                    title: 'Discovery & Strategy',
-                    description: 'We start by understanding your business goals and technical requirements.',
-                    deliverables: ['Project brief', 'Site architecture']
+                    title: 'Discovery',
+                    description: 'Understanding your organizational goals and values.',
+                    deliverables: ['Briefing', 'Research']
                 },
                 {
                     number: '02',
-                    title: 'Design & Prototyping',
-                    description: 'Creating wireframes and high-fidelity mockups that bring your vision to life.',
-                    deliverables: ['Visual designs', 'Interactive prototypes']
+                    title: 'Concept',
+                    description: 'Developing identity concepts that align with your mission.',
+                    deliverables: ['Logo concepts', 'Visual themes']
                 },
                 {
                     number: '03',
-                    title: 'Development',
-                    description: 'Building your digital product using modern frameworks and best practices.',
-                    deliverables: ['Responsive website', 'Performance optimization']
+                    title: 'Design',
+                    description: 'Creating the full suite of corporate materials.',
+                    deliverables: ['Stationery', 'Templates']
                 },
                 {
                     number: '04',
-                    title: 'Launch & Support',
-                    description: 'Deployment and ongoing support to ensure optimal performance.',
-                    deliverables: ['Deployment', 'Maintenance plan']
+                    title: 'Guidelines',
+                    description: 'Ensuring consistency with brand guidelines.',
+                    deliverables: ['Brand book', 'Assets']
                 }
             ],
-            image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80'
+            image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80'
         },
 
         features: [
             {
-                title: 'Responsive Web Design',
-                description: 'Mobile-first designs that adapt beautifully to any screen size.',
-                icon: '📱',
-                image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80'
+                title: 'Logo Design',
+                description: 'Distinctive logos that represent your organization.',
+                icon: '🎨',
+                image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80'
             },
             {
-                title: 'E-commerce Solutions',
-                description: 'Full-featured online stores with secure payment processing.',
-                icon: '🛒',
-                image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80'
+                title: 'Corporate Stationery',
+                description: 'Business cards, letterheads, and envelopes.',
+                icon: '📝',
+                image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=80'
             },
             {
-                title: 'Content Management Systems',
-                description: 'Easy-to-use CMS platforms for effortless content updates.',
-                icon: '⚙️',
-                image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80'
+                title: 'Visual Identity',
+                description: 'Comprehensive visual systems for consistency.',
+                icon: '👁️',
+                image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80'
             },
             {
-                title: 'Web Applications',
-                description: 'Custom web apps tailored to your business processes.',
-                icon: '💻',
-                image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80'
+                title: 'Branding',
+                description: 'Building a cohesive brand presence.',
+                icon: '🏢',
+                image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80'
             }
         ],
 
         technologies: {
-            title: 'Technologies We Use',
-            description: 'We leverage modern, proven technologies',
+            title: 'Tools We Use',
+            description: 'Industry standard design software',
             stack: [
-                { name: 'React', category: 'Frontend' },
-                { name: 'Next.js', category: 'Framework' },
-                { name: 'Node.js', category: 'Backend' },
-                { name: 'WordPress', category: 'CMS' },
-                { name: 'Shopify', category: 'E-commerce' }
+                { name: 'Illustrator', category: 'Vector' },
+                { name: 'InDesign', category: 'Layout' },
+                { name: 'Photoshop', category: 'Editing' }
             ]
         },
 
-        caseStudies: [], // Conserved for brevity
-        faqs: [], // Conserved for brevity
+        caseStudies: [],
+        faqs: [
+            {
+                question: 'What is included in a corporate identity package?',
+                answer: 'Our standard package includes logo design, primary and secondary color palettes, typography selection, business card design, letterhead, and a comprehensive brand settings guide. We can also customize packages to include social media assets or presentation templates.'
+            },
+            {
+                question: 'How long does the design process take?',
+                answer: 'A typical corporate identity project takes 4-6 weeks. This allows time for deep research, concept development, and refinement loops to ensure the final result is perfect.'
+            },
+            {
+                question: 'Do I get ownership of the final files?',
+                answer: 'Yes, absolutely. Once the project is complete and paid for, you have full ownership of all final visual assets.'
+            }
+        ],
         pricing: {
-            title: 'Investment Options',
-            description: 'Flexible packages to match your needs',
+            title: 'Corporate Packages',
+            description: 'Tailored for your organization',
             packages: [
                 {
-                    name: 'Starter',
-                    description: 'Perfect for small businesses',
-                    features: ['Up to 5 pages', 'Responsive', 'Contact form'],
-                    ideal: 'Small businesses'
+                    name: 'Startup',
+                    description: 'Essential identity elements',
+                    features: ['Logo', 'Business Card', 'Letterhead'],
+                    ideal: 'New organizations'
                 },
                 {
-                    name: 'Professional',
-                    description: 'Comprehensive solution',
-                    features: ['Up to 15 pages', 'CMS integration', 'SEO'],
-                    ideal: 'NGOs',
+                    name: 'Established',
+                    description: 'Full corporate suite',
+                    features: ['Logo', 'Full Stationery', 'Brand Guidelines'],
+                    ideal: 'Growing NGOs',
                     popular: true
-                },
-                {
-                    name: 'Enterprise',
-                    description: 'Full-scale solution',
-                    features: ['Unlimited pages', 'Custom app', 'E-commerce'],
-                    ideal: 'Large organizations'
                 }
             ]
         },
         cta: {
-            title: 'Ready to Transform Your Digital Presence?',
-            description: 'Let\'s discuss how we can help you achieve your digital goals',
-            primaryButton: 'Start Your Project',
-            secondaryButton: 'View Our Work'
+            title: 'Ready to Build Your Corporate Identity?',
+            description: 'Let\'s create a brand that stands out',
+            primaryButton: 'Start Project',
+            secondaryButton: 'View Portfolio'
         }
     },
 
     'brand-identity': {
         id: 'brand-identity',
-        title: 'Brand Identity Design',
+        title: 'Strategy - Brand Identity Design',
         tagline: 'Strategy - Brand Identity Design',
         heroImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80',
 
@@ -209,7 +214,20 @@ export const servicesDetailData = {
                 image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80'
             }
         ],
-        faqs: [],
+        faqs: [
+            {
+                question: 'What is the difference between a logo and brand identity?',
+                answer: 'A logo is just one symbol. Brand identity is the complete visual language—colors, fonts, photography style, patterns, and voice—that tells your story consistently across all platforms.'
+            },
+            {
+                question: 'Can you refresh an existing brand without changing everything?',
+                answer: 'Yes. We call this a "brand evolution." We keep the core elements that have equity (like your name or main colors) but modernize the execution to be more relevant and premium.'
+            },
+            {
+                question: 'What deliverables do I receive?',
+                answer: 'You receive a complete "Brand Bible" or style guide, plus all source files (AI, EPS, PDF) and web-ready formats (PNG, SVG, JPG) for every asset created.'
+            }
+        ],
         cta: {
             title: 'Ready to Build a Powerful Brand?',
             description: 'Let\'s create a brand identity that sets you apart',
@@ -220,7 +238,7 @@ export const servicesDetailData = {
 
     'report-design': {
         id: 'report-design',
-        title: 'Report Design',
+        title: 'Publications - Report Design',
         tagline: 'Publications - Report Design',
         heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80',
 
@@ -306,7 +324,20 @@ export const servicesDetailData = {
                 image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80'
             }
         ],
-        faqs: [],
+        faqs: [
+            {
+                question: 'What format do you need the content in?',
+                answer: 'We prefer a clean Word document for text and high-resolution folders for images. If you have data for charts, Excel files are preferred.'
+            },
+            {
+                question: 'Can you handle data visualization and infographics?',
+                answer: 'Yes, this is our specialty. We turn complex data tables into clear, engaging infographics that make your impact immediately understood.'
+            },
+            {
+                question: 'Do you manage the printing process?',
+                answer: 'Yes, we can manage the entire print production workflow, from selecting the right paper stock to quality checking the final run.'
+            }
+        ],
         cta: {
             title: 'Ready to Publish?',
             description: 'Let\'s create impactful reports together',
@@ -315,86 +346,105 @@ export const servicesDetailData = {
         }
     },
 
-    'messaging': {
-        id: 'messaging',
-        title: 'Messaging',
-        tagline: 'Craft Messages That Resonate',
-        heroImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1920&q=80',
+    'event-design': {
+        id: 'event-design',
+        title: 'Event Design Services - Exhibition and Large Format',
+        tagline: 'Exhibition and Large Format',
+        heroImage: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920&q=80',
 
         overview: {
-            title: 'Strategic Messaging',
-            description: `Great design needs great words. Our messaging services help you articulate your value proposition, define your brand voice, and create content that resonates with your audience.
+            title: 'Make an Impact at Every Event',
+            description: `From a single banner to a custom-built stand, we’ll help channel your inner exhibitionist. Our range of services include brand building, marketing and communication strategies.
             
-            We specialize in helping purpose-driven organizations communicate their impact. From brand statements to comprehensive communication strategies, we ensure your message is clear, consistent, and compelling.`,
-            image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80'
+            We specialize in creating immersive event experiences that capture attention and engage your audience. Whether it's a corporate event, trade show, or public exhibition, we deliver large format designs that make a statement.`,
+            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80'
         },
 
         process: {
-            title: 'Messaging Process',
+            title: 'Our Event Design Process',
             steps: [
                 {
                     number: '01',
-                    title: 'Audience Research',
-                    description: 'Understanding needs and motivations.',
-                    deliverables: ['Personas', 'Key messages']
+                    title: 'Concept',
+                    description: 'Conceptualizing the event space and visual theme.',
+                    deliverables: ['3D renders', 'Floor plans']
                 },
                 {
                     number: '02',
-                    title: 'Framework Development',
-                    description: 'Defining value proposition and brand voice.',
-                    deliverables: ['Messaging framework', 'Voice guidelines']
+                    title: 'Design',
+                    description: 'Designing large format graphics and displays.',
+                    deliverables: ['Banner designs', 'Stand graphics']
                 },
                 {
                     number: '03',
-                    title: 'Content Creation',
-                    description: 'Developing compelling copy for all channels.',
-                    deliverables: ['Web copy', 'Marketing materials']
+                    title: 'Production',
+                    description: 'Printing and fabrication of all elements.',
+                    deliverables: ['Print production', 'Fabrication']
                 },
                 {
                     number: '04',
-                    title: 'Review & Refine',
-                    description: 'Ensuring consistency and impact.',
-                    deliverables: ['Final content', 'Style guide']
+                    title: 'Installation',
+                    description: 'On-site setup and arrangement.',
+                    deliverables: ['Setup', 'Breakdown']
                 }
             ],
-            image: 'https://images.unsplash.com/photo-1542435503-956c469947f6?w=1200&q=80'
+            image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80'
         },
 
         features: [
             {
-                title: 'Brand Messaging',
-                description: 'Clear frameworks communicating your value.',
-                icon: '💬',
-                image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80'
+                title: 'Exhibition Stands',
+                description: 'Custom-built stands that draw crowds.',
+                icon: '🎪',
+                image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80'
             },
             {
-                title: 'Content Strategy',
-                description: 'Plans aligning content with business goals.',
-                icon: '📋',
-                image: 'https://images.unsplash.com/photo-1542435503-956c469947f6?w=800&q=80'
+                title: 'Large Format Printing',
+                description: 'Banners, backdrops, and wall murals.',
+                icon: '🖨️',
+                image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&q=80'
             },
             {
-                title: 'Copywriting',
-                description: 'Professional writing for web and print.',
-                icon: '✍️',
-                image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80'
+                title: 'Event Branding',
+                description: 'Cohesive branding across all event materials.',
+                icon: '🎨',
+                image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80'
+            },
+            {
+                title: 'Signage Solutions',
+                description: 'Directional and promotional signage.',
+                icon: '🪧',
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'
             }
         ],
 
         caseStudies: [],
-        faqs: [],
+        faqs: [
+            {
+                question: 'How much lead time do you need for an exhibition stand?',
+                answer: 'For custom builds, we recommend at least 8-12 weeks. For modular or portable displays, 4-6 weeks is usually sufficient.'
+            },
+            {
+                question: 'Do you handle installation and breakdown?',
+                answer: 'Yes, our team manages the logistics of getting your stand to the venue, setting it up perfectly, and taking it down after the event.'
+            },
+            {
+                question: 'Can you design modular stands that can be reused?',
+                answer: 'Absolutely. We prioritize sustainability and ROI. We can design modular systems that can be reconfigured for different booth sizes at future events.'
+            }
+        ],
         cta: {
-            title: 'Ready to Refine Your Message?',
-            description: 'Let\'s find the right words',
-            primaryButton: 'Start Messaging Project',
-            secondaryButton: 'View Samples'
+            title: 'Ready to Exhibit?',
+            description: 'Let\'s create an unforgettable event experience',
+            primaryButton: 'Start Event Project',
+            secondaryButton: 'View Gallery'
         }
     },
 
     'print-design': {
         id: 'print-design',
-        title: 'Print Design',
-        tagline: 'Packaging and Printing',
+        title: 'Packaging and printing - Print Design',
+        tagline: 'Packaging and printing - Print Design',
         heroImage: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1920&q=80',
 
         overview: {
@@ -481,7 +531,20 @@ export const servicesDetailData = {
                 image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80'
             }
         ],
-        faqs: [],
+        faqs: [
+            {
+                question: 'Do you offer eco-friendly printing options?',
+                answer: 'Yes, we work with partners who offer recycled papers, soy-based inks, and carbon-neutral printing processes.'
+            },
+            {
+                question: 'Can you help with distribution?',
+                answer: 'We can coordinate with mailing houses or logistics partners to ensure your print materials get where they need to go.'
+            },
+            {
+                question: 'What is your minimum print run?',
+                answer: 'It depends on the item. For digital print, we can do very small runs (e.g., 10 annual reports). For litho (offset), longer runs are more cost-effective.'
+            }
+        ],
         cta: {
             title: 'Ready for Print?',
             description: 'Let\'s bring your brand into the physical world',
