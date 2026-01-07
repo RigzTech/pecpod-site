@@ -11,10 +11,10 @@ const Footer = () => {
                 <div className="footer-main">
                     {/* Column 1: Brand & Description */}
                     <div className="footer-brand">
-                        <h3 className="footer-logo">PECPOD</h3>
+                        <h3 className="footer-logo">PecPod<span className="text-gold">Studio</span></h3>
                         <p className="footer-tagline">Design Studio</p>
                         <p className="footer-description">
-                            Crafting exceptional visual experiences that drive impact and build meaningful connections.
+                            PecPod Studio deals with consultancy, graphic design, communications, and marketing agencies.
                         </p>
 
                         {/* Social Links */}
@@ -50,11 +50,11 @@ const Footer = () => {
                     <div className="footer-column">
                         <h4 className="footer-heading">Services</h4>
                         <ul className="footer-links">
-                            <li><a href="/services">Digitalisation</a></li>
-                            <li><a href="/services">Brand Identity</a></li>
-                            <li><a href="/services">Report Design</a></li>
-                            <li><a href="/services">Messaging</a></li>
-                            <li><a href="/services">Print Design</a></li>
+                            <li><a href="/services/digitalisation">Digitalisation</a></li>
+                            <li><a href="/services/brand-identity">Brand Identity</a></li>
+                            <li><a href="/services/report-design">Report Design</a></li>
+                            <li><a href="/services/messaging">Messaging</a></li>
+                            <li><a href="/services/print-design">Print Design</a></li>
                         </ul>
                     </div>
 

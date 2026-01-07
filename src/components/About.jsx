@@ -9,78 +9,58 @@ const About = () => {
     const teamMembers = [
         {
             name: 'Brian Alili',
-            role: 'Founder & Creative Director',
+            role: 'Director / Founder',
             initials: 'BA',
-            bio: 'Brian founded PecPod with a vision to create meaningful design that drives impact. With over 10 years of experience in brand strategy and visual design, he leads our creative direction and ensures every project exceeds client expectations.',
-            expertise: ['Brand Strategy', 'Creative Direction', 'Client Relations']
+            bio: 'Mr. Brian Alili has gained vast experience over the years and has been in the design industry for over 5 years. Having a Diploma in Graphic Design and pursuing a Bachelor\'s Degree in Communications from the University of Nairobi, he specializes in creating publications, drafting articles, strategic plans and posters. He also works for various non-profit organizations as a communications consultant.',
+            expertise: ['Brand Strategy', 'Publications', 'Communications']
         },
         {
             name: 'Rodney Alubokho',
-            role: 'Head of Operations',
+            role: 'Operations',
             initials: 'RA',
-            bio: 'Rodney ensures our projects run smoothly from concept to delivery. His expertise in project management and operational excellence keeps our team efficient and our clients happy.',
-            expertise: ['Project Management', 'Operations', 'Quality Assurance']
+            bio: 'Rodney ensures smooth project execution and operational efficiency, coordinating between teams to deliver on time.',
+            expertise: ['Project Management', 'Operations']
         },
         {
             name: 'Bruno Lumbasi',
-            role: 'Senior Graphic Designer',
+            role: 'Graphic Designer',
             initials: 'BL',
-            bio: 'Bruno brings creative concepts to life with exceptional attention to detail. His expertise in visual design and typography creates stunning work that resonates with audiences.',
-            expertise: ['Graphic Design', 'Typography', 'Visual Identity']
+            bio: 'Bruno specializes in creating visually compelling graphic designs and visual identities that resonate with audiences.',
+            expertise: ['Graphic Design', 'Visual Identity']
         },
         {
             name: 'Alvin Steve',
-            role: 'Lead Illustrator',
+            role: 'Illustrator',
             initials: 'AS',
-            bio: 'Alvin creates custom illustrations and visual elements that make our designs unique. His artistic vision adds a distinctive touch to every project.',
-            expertise: ['Illustration', 'Digital Art', 'Visual Storytelling']
+            bio: 'Alvin brings creative concepts to life through unique illustrations and visual storytelling.',
+            expertise: ['Illustration', 'Creative Art']
         }
     ];
 
     const values = [
         {
-            title: '01 Creative Excellence',
-            shortDesc: 'Pushing creative boundaries for lasting impact.',
-            fullDesc: 'We believe in pushing the boundaries of creativity to deliver work that not only looks beautiful but creates lasting impact. Every project is an opportunity to innovate and exceed expectations.',
-            principles: [
-                'Innovative thinking in every project',
-                'Attention to detail and craftsmanship',
-                'Continuous learning and improvement',
-                'Setting new standards in design'
-            ]
+            title: 'Creativity',
+            shortDesc: 'Innovation in every design.',
+            fullDesc: 'We believe in pushing boundaries to create unique solutions for every client, ensuring your brand stands out.',
+            principles: []
         },
         {
-            title: '02 Strategic Thinking',
-            shortDesc: 'Strategy-backed decisions to meet business goals.',
-            fullDesc: 'Great design starts with great strategy. We combine creative thinking with business acumen to ensure every design decision supports your goals and drives measurable results.',
-            principles: [
-                'Research-driven design decisions',
-                'Alignment with business objectives',
-                'Data-informed creative choices',
-                'Long-term brand building'
-            ]
+            title: 'Commitment',
+            shortDesc: 'Dedicated to your success.',
+            fullDesc: 'We are committed to our clients, ensuring high standards and walking with you as a business partner.',
+            principles: []
         },
         {
-            title: '03 Client Partnership',
-            shortDesc: 'Working closely as partners to realize visions.',
-            fullDesc: 'We see ourselves as an extension of your team. Through close collaboration and open communication, we work together to bring your vision to life and achieve shared success.',
-            principles: [
-                'Transparent communication',
-                'Collaborative approach',
-                'Responsive to feedback',
-                'Committed to your success'
-            ]
+            title: 'Industry and Integrity',
+            shortDesc: 'Professionalism at our core.',
+            fullDesc: 'We uphold the highest levels of professionalism and integrity in all our dealings, depicted by our repeat clients.',
+            principles: []
         },
         {
-            title: '04 Innovation First',
-            shortDesc: 'Staying ahead of trends with cutting-edge solutions.',
-            fullDesc: 'The design landscape is constantly evolving, and so are we. We stay ahead of trends and embrace new technologies to deliver cutting-edge solutions that keep you competitive.',
-            principles: [
-                'Embracing new technologies',
-                'Trend awareness and adaptation',
-                'Creative problem-solving',
-                'Future-focused thinking'
-            ]
+            title: 'Customer Appreciation',
+            shortDesc: ' valuing every relationship.',
+            fullDesc: 'We value our clients and strive to exceed expectations, delivering quality products on time.',
+            principles: []
         }
     ];
 
@@ -101,18 +81,16 @@ const About = () => {
                     <div className="master-hero-content">
                         <span className="master-label animate-fade-in">PecPod Design Studio</span>
                         <h1 className="master-title animate-fade-in-up">
-                            <span className="hero-accent">Where</span>
-                            <span className="text-outline big-text">Creativity</span>
-                            <span className="hero-accent">Meets</span>
+                            <span className="hero-accent">Design with</span>
+                            <span className="text-outline big-text">Purpose</span>
+                            <span className="hero-accent">Driven by</span>
                             <span className="text-gold big-text">Strategy</span>
                         </h1>
                         <p className="master-description animate-fade-in-up">
-                            We are the architects of visual culture, crafting brands that
-                            stand the test of time and digital transformation.
+                            We are not in the business to just provide graphic design services but also walk with you as your 'business partner' until the completion of any project.
                         </p>
                     </div>
                 </div>
-
 
                 <div className="master-scroll-indicator">
                     <div className="scroll-line"></div>
@@ -120,7 +98,7 @@ const About = () => {
             </div>
 
             <div className="container relative z-10">
-                {/* Intro CTA - Transition Point */}
+                {/* Intro CTA */}
                 <div className="intro-cta-container">
                     <Link to="/" className="premium-hero-btn dark-mode-btn">
                         <span className="btn-text">View Selected Works</span>
@@ -133,94 +111,90 @@ const About = () => {
                 <div className="about-intro">
                     <div className="about-hero-grid">
                         <div className="hero-text-content">
-                            <span className="hero-label animate-fade-in">Who We Are</span>
+                            <span className="hero-label animate-fade-in">Why PecPod?</span>
                             <h2 className="hero-title animate-fade-in-up">
-                                Visual <br />
-                                <span className="text-stroke">Intelligence</span>
+                                Creative <br />
+                                <span className="text-stroke">Consultancy</span>
                             </h2>
                             <p className="hero-description animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                                We are a multidisciplinary design studio bridging the gap between
-                                <span className="highlight"> strategic thinking</span> and
-                                <span className="highlight"> creative excellence</span>.
+                                In today’s crowded market, a strong team made up of highly innovative thinkers, top-of-the-game designers and aggressive and enthusiastic marketers cuts through the industry to create Pecpod Atelier.
+                                <br /><br />
+                                The ideology behind this is that we see each company as a brand that needs to create a lasting impression on the consumers and stakeholders through its communications.
                             </p>
                             <div className="hero-stats animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                                 <div className="stat-item">
-                                    <span className="stat-number">10+</span>
+                                    <span className="stat-number">5+</span>
                                     <span className="stat-label">Years Exp.</span>
                                 </div>
                                 <div className="stat-item">
-                                    <span className="stat-number">50+</span>
-                                    <span className="stat-label">Projects</span>
+                                    <span className="stat-number">100%</span>
+                                    <span className="stat-label">Timely Delivery</span>
                                 </div>
                                 <div className="stat-item">
-                                    <span className="stat-number">100%</span>
-                                    <span className="stat-label">Commitment</span>
+                                    <span className="stat-number">High</span>
+                                    <span className="stat-label">Quality Standards</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="hero-visuals">
                             <div className="floating-card card-1 glass">
-                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Digital Design" />
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="Consultancy" />
                             </div>
                             <div className="floating-card card-2 glass">
-                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" alt="Brand Identity" />
-                            </div>
-                            <div className="floating-card card-3 glass">
-                                <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=800&q=80" alt="Print Design" />
+                                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80" alt="Design" />
                             </div>
                             <div className="decorative-circle"></div>
                         </div>
                     </div>
                 </div>
 
-                {/* Our Story */}
+                {/* Vision & Mission Section */}
                 <div className="our-story-section">
                     <div className="story-content">
-                        <span className="section-label">Our Story</span>
-                        <h3>Design that moves people forward</h3>
-                        <p>
-                            PecPod was founded by Brian Alili with a vision to bridge the gap between creativity and strategy.
-                            Together with Rodney Alubokho, they've built a studio that delivers exceptional design for organizations making real impact.
-                            Our journey has been marked by a relentless pursuit of excellence and a commitment to delivering outstanding results.
-                            We specialize in serving non-profits, NGOs, and purpose-driven businesses who need powerful visual communications.
-                        </p>
+                        <span className="section-label">Our Purpose</span>
+                        <h3>Our Vision & Mission</h3>
+                        <div className="vm-grid">
+                            <div className="vm-card">
+                                <h4>Vision</h4>
+                                <p>To be the admirable company of choice in matters of design that deliver products and services of the highest quality using the latest technology in the market to ensure our clients can achieve their target.</p>
+                            </div>
+                            <div className="vm-card">
+                                <h4>Mission Statement</h4>
+                                <p>To provide services at competitive market prices in Graphic design, Illustration, and Messaging.</p>
+                            </div>
+                        </div>
                         <blockquote className="quote">
-                            "Design is not just what it looks like. Design is how it works."
-                            <footer>- Steve Jobs</footer>
+                            "We offer a personalized service that extends on the completion of any task. Professionalism is what we pride ourselves in."
                         </blockquote>
                     </div>
                 </div>
 
-                {/* Core Values with Accordions */}
+                {/* Value Proposition */}
+                <div className="value-prop-section">
+                    <h3>Value Proposition</h3>
+                    <p>We believe great work starts with strategic thinkers who can combine the soft touch of developing and delivering the right visuals to the right people with the strength of today’s technology and trends. That’s why we are your best choice — to ensure that the smart people you need are on your side. From strategy and implementation to visualization and creation, your design needs will be in the best hands.</p>
+                </div>
+
+                {/* Core Values */}
                 <div className="values-section">
                     <div className="values-container-split">
                         <div className="values-content-side">
-                            <h3 className="subsection-title-left">What We Stand For</h3>
+                            <h3 className="subsection-title-left">Core Values</h3>
                             <div className="values-list-vertical">
                                 {values.map((value, index) => (
                                     <div key={index} className="value-item-accordion-clean">
-                                        <div
-                                            className="value-header-clean"
-                                            onClick={() => toggleValue(index)}
-                                        >
-                                            <span className="value-number">{value.title.split(' ')[0]}</span>
+                                        <div className="value-header-clean" onClick={() => toggleValue(index)}>
+                                            <span className="value-number">0{index + 1}</span>
                                             <div className="value-header-text">
-                                                <h4 className="value-title-clean">{value.title.substring(3)}</h4>
+                                                <h4 className="value-title-clean">{value.title}</h4>
                                                 <p className="value-desc-clean">{value.shortDesc}</p>
                                             </div>
-                                            <span className={`toggle-icon-clean ${expandedValue === index ? 'expanded' : ''}`}>
-                                                +
-                                            </span>
+                                            <span className={`toggle-icon-clean ${expandedValue === index ? 'expanded' : ''}`}>+</span>
                                         </div>
                                         <div className={`value-content ${expandedValue === index ? 'expanded' : ''}`}>
                                             <div className="value-content-inner-clean">
                                                 <p className="value-full-desc">{value.fullDesc}</p>
-                                                <ul className="value-principles">
-                                                    {value.principles.map((principle, idx) => (
-                                                        <li key={idx}>{principle}</li>
-                                                    ))}
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -229,39 +203,23 @@ const About = () => {
                         </div>
                         <div className="values-image-side">
                             <div className="values-image-wrapper creative-composition">
-                                {/* Base Layer - Darkened & Textured */}
                                 <div className="comp-layer base-layer">
                                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Strategic Design" />
                                     <div className="layer-overlay"></div>
                                 </div>
-
-                                {/* Decorative Elements */}
                                 <div className="comp-layer deco-circle"></div>
-                                <div className="comp-layer deco-lines"></div>
-
-                                {/* Floating Accent Image */}
-                                <div className="comp-layer float-image glass">
-                                    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&q=80" alt="Detail" />
-                                </div>
-
-                                {/* Content Card */}
-                                <div className="values-overlay-card glass-dark animate-fade-in-up">
-                                    <span className="card-label">Core Philosophy</span>
-                                    <strong className="card-title">Design with Purpose</strong>
-                                    <div className="card-indicator">
-                                        <span className="active"></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Team Section with Expandable Bios */}
+                {/* Team Section */}
                 <div className="team-section">
-                    <h3 className="subsection-title text-center">Meet Our Team</h3>
+                    <h3 className="subsection-title text-center">Our Executive Team</h3>
+                    <div className="team-intro text-center">
+                        <p>We are a dynamic team made of creative specialists with expertise that extends through more than just creating compelling designs; we specialize in communication practices with a special focus on print, design and marketing solutions.</p>
+                    </div>
+
                     <div className="team-grid">
                         {teamMembers.map((member, index) => (
                             <div key={index} className="team-card-expandable">
@@ -280,9 +238,7 @@ const About = () => {
                                     aria-expanded={expandedMember === index}
                                 >
                                     {expandedMember === index ? 'Show less' : 'Read bio'}
-                                    <span className={`toggle-icon ${expandedMember === index ? 'expanded' : ''}`}>
-                                        ↓
-                                    </span>
+                                    <span className={`toggle-icon ${expandedMember === index ? 'expanded' : ''}`}>↓</span>
                                 </button>
                                 <div className={`team-bio ${expandedMember === index ? 'expanded' : ''}`}>
                                     <p>{member.bio}</p>
