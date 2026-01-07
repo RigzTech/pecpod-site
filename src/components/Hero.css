@@ -21,9 +21,9 @@
 .hero-minimal-content {
     position: relative;
     z-index: 10;
-    max-width: 1000px;
-    /* Increased max-width */
+    max-width: 100%;
     width: 100%;
+    padding: 0 1rem;
     margin: 0 auto;
     text-align: center;
     /* Center align text */
@@ -41,6 +41,7 @@
     margin-bottom: 2rem;
     color: var(--color-black);
     width: 100%;
+    word-wrap: break-word;
 }
 
 .hero-gold-word {
@@ -396,6 +397,13 @@
 
 @media (max-width: 768px) {
     .hero-minimal-title {
-        font-size: 4rem;
+        font-size: 12vw;
+        /* About 3rem to 3.5rem on mobile */
+        line-height: 1.1;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
