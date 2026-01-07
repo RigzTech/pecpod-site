@@ -114,11 +114,21 @@ const Insights = () => {
                     <div className="newsletter-content">
                         <h3>Stay Inspired</h3>
                         <p>Get design insights and creative inspiration delivered to your inbox</p>
-                        <form className="newsletter-form">
+                        <form
+                            className="newsletter-form"
+                            action="https://formsubmit.co/brianalili4@gmail.com"
+                            method="POST"
+                        >
+                            <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+                            <input type="hidden" name="_captcha" value="true" />
+                            <input type="hidden" name="_autoresponse" value="Thank you for subscribing to PecPod Insights! You'll now receive our latest design trends and updates directly to your inbox." />
+
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Enter your email"
                                 className="newsletter-input"
+                                required
                             />
                             <button type="submit" className="newsletter-btn">Subscribe</button>
                         </form>
