@@ -70,26 +70,10 @@ const ProjectDetail = () => {
 
     // Default content if none exists in data
     // This allows the page to work gracefully even before the user populates all text
+    // Default content for fallback
     const defaultContent = `
         <div class="magazine-intro">
-            <p>This project represents a significant milestone in our design journey. We approached the challenge with a focus on clarity, impact, and aesthetic precision. By deconstructing the core message, we were able to rebuild it into a visual narrative that resonates with the target audience.</p>
-            <p>The solution required a delicate balance between form and function. We utilized a strategic color palette and modern typography to guide the user's eye and ensure that the most critical information was always accessible.</p>
-        </div>
-
-        <div class="magazine-section">
-            <h3>The Challenge</h3>
-            <p>Every project begins with a problem. In this case, the objective was to transform complex data into a compelling story. The client needed a way to communicate their impact without overwhelming their stakeholders with dense technical jargon.</p>
-            <p>Our research phase revealed that the target audience responded best to visual metaphors and clean, digestible layouts. This insight drove our design direction from day one.</p>
-        </div>
-
-        <div class="pull-quote">
-            "Design is not just what it looks like and feels like. Design is how it works."
-        </div>
-
-        <div class="magazine-section">
-            <h3>The Solution</h3>
-            <p>We developed a design system that leveraged high-contrast imagery and bold typography. This created a sense of urgency and importance, while the ample whitespace allowed the content to breathe.</p>
-            <p>The final deliverable was not just a document, but an experience. It empowered the client to present their findings with confidence and clarity, ultimately leading to a successful outcome for their initiatives.</p>
+            <p>Project details are currently being updated. Please check back soon for the full case study.</p>
         </div>
     `;
 
