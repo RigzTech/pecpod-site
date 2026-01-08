@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Portfolio.css';
 
 import { portfolioData } from '../data/portfolioData';
@@ -43,10 +44,11 @@ const Portfolio = ({ activeFilter }) => {
         ? projectsWithSizes
         : projectsWithSizes.filter(project => project.category === activeFilter);
 
-    const handleProjectClick = (documentUrl) => {
-        if (documentUrl && documentUrl !== '#') {
-            window.open(documentUrl, '_blank');
-        }
+    const navigate = useNavigate();
+
+    const handleProjectClick = (project) => {
+        // Navigate to the internal detail page
+        navigate(`/work/${project.id}`);
     };
 
     return (
@@ -57,7 +59,7 @@ const Portfolio = ({ activeFilter }) => {
                     {filteredProjects.map((project) => (
                         <div key={project.id} className={`masonry-item ${project.size}`}>
                             <div className="project-card group">
-                                <div className="project-image-wrapper" onClick={() => handleProjectClick(project.document)} style={{ cursor: 'pointer' }}>
+                                <div className="project-image-wrapper" onClick={() => handleProjectClick(project)} style={{ cursor: 'pointer' }}>
                                     {/* Main Content Image */}
                                     <img
                                         src={project.image}

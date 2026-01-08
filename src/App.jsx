@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import Insights from './pages/Insights';
 import InsightDetail from './pages/InsightDetail';
 import ServiceDetail from './pages/ServiceDetail';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/work/:projectId" element={<ProjectDetail />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:serviceId" element={<ServiceDetail />} />
