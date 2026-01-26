@@ -90,7 +90,7 @@
 .navbar-cta:hover {
     background: var(--color-gold);
     color: var(--color-black);
-    box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 .mobile-menu-toggle {
@@ -209,7 +209,7 @@
     background: #000;
     min-width: 220px;
     padding: 1rem 0;
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: 8px;
     opacity: 0;
     visibility: hidden;
