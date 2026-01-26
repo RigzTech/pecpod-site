@@ -22,7 +22,7 @@ const Navbar = () => {
                 <div className="navbar-content">
                     {/* Logo */}
                     <div className="navbar-logo">
-                        <span className="logo-text">PECPOD<span className="logo-highlight">STUDIO</span></span>
+                        <img src="/pecpod-logo.jpg" alt="PecPod Studio" className="logo-image" />
                     </div>
 
                     {/* Desktop Navigation */}

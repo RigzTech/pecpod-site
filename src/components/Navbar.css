@@ -27,12 +27,13 @@
     z-index: 1001;
 }
 
-.logo-text {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: var(--color-white);
+/* Logo Styles */
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    /* Optional: blend mode if background is not perfectly transparent */
+    /* mix-blend-mode: screen; */
 }
 
 .logo-highlight {
