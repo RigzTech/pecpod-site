@@ -13,7 +13,7 @@
     min-height: 600px;
     /* Ensure content doesn't get crushed */
     width: 100vw;
-    background-color: var(--color-black);
+    background-color: var(--color-navy-dark);
     color: var(--color-white);
     display: flex;
     align-items: center;

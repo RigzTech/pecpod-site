@@ -1,10 +1,25 @@
 import { useState, useEffect } from 'react';
 import './FilterBar.css';
-import { portfolioCategories } from '../data/portfolioData';
 
 const FilterBar = ({ activeFilter, onFilterChange }) => {
     const [isSticky, setIsSticky] = useState(false);
-    const categories = portfolioCategories;
+
+    // Decoupled from static file
+    const categories = [
+        'ALL',
+        'Annual Reports',
+        'Brand identity',
+        'Brochures and flyers',
+        'Corporate',
+        'Documentaries',
+        'Government',
+        'Infographics',
+        'Magazines',
+        'Policy',
+        'Story telling',
+        'Strategic Plan',
+        'UX-UI'
+    ];
 
     useEffect(() => {
         const handleScroll = () => {

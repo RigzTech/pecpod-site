@@ -1,25 +1,48 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { insightsData } from '../data/insightsData';
+import axios from 'axios';
 import './InsightDetail.css';
 
 const InsightDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    // Find article
-    const article = insightsData.find(a => a.id === parseInt(id));
+    const [article, setArticle] = useState(null);
+    const [relatedArticles, setRelatedArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Get related articles (exclude current, take 3 random)
-    const relatedArticles = insightsData
-        .filter(a => a.id !== parseInt(id))
-        .sort(() => 0.5 - Math.random())
-        .slice(0, 3);
-
-    // Scroll to top on mount or id change
     useEffect(() => {
         window.scrollTo(0, 0);
+        const fetchInsight = async () => {
+            setLoading(true);
+            try {
+                // Fetch the main article
+                const res = await axios.get(`/api/insights/${id}`);
+                setArticle(res.data);
+
+                // Fetch all/related insights
+                // Optimization: Use a tailored endpoint
+                const allRes = await axios.get('/api/insights');
+                const all = allRes.data;
+
+                const related = all
+                    .filter(a => a.id !== id && a._id !== id) // Handle different ID types if needed
+                    .sort(() => 0.5 - Math.random())
+                    .slice(0, 3);
+
+                setRelatedArticles(related);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchInsight();
     }, [id]);
+
+    if (loading) {
+        return <div style={{ padding: '100px', textAlign: 'center' }}>Loading Article...</div>;
+    }
 
     if (!article) {
         return (
@@ -45,47 +68,121 @@ const InsightDetail = () => {
                     </div>
                 </div>
 
-                <header className="document-header">
+                {/* Immersive Hero Section */}
+                <header className="creative-hero">
                     <div className="container">
-                        <div className="header-meta">
-                            <span className="category-badge">{article.category}</span>
-                            <span className="read-time">{article.readTime}</span>
+                        <div className="hero-inner">
+                            <div className="hero-content animate-fade-in-up">
+                                <div className="meta-pill">
+                                    <span className="hero-category">{article.category}</span>
+                                    <span className="hero-dot">•</span>
+                                    <span className="hero-time">{article.readTime}</span>
+                                </div>
+                                <h1 className="hero-title">{article.title}</h1>
+
+                                <div className="hero-author-block">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Author" className="hero-avatar" />
+                                    <div className="hero-author-text">
+                                        <span className="by-line">Written by</span>
+                                        <span className="author-name">{article.author || 'PecPod Team'}</span>
+                                    </div>
+                                    <span className="hero-date">{article.date}</span>
+                                </div>
+                            </div>
                         </div>
-                        <h1 className="document-title">{article.title}</h1>
-                        <p className="document-date">{article.date}</p>
                     </div>
+                    {/* Background decoration or image if desired inline */}
                 </header>
 
                 {article.image && (
-                    <div className="document-hero-image">
+                    <div className="creative-featured-image">
                         <div className="container">
-                            <img src={article.image} alt={article.title} />
+                            <div className="image-frame hover-scale-subtle">
+                                <img src={article.image} alt={article.title} />
+                            </div>
                         </div>
                     </div>
                 )}
 
                 <div className="document-content-wrapper">
                     <div className="container">
-                        <div
-                            className="document-body"
-                            dangerouslySetInnerHTML={{ __html: article.content }}
-                        />
+                        <div className="document-body">
+                            {/* Advanced Creative Parser */}
+                            {article.content && (() => {
+                                const lines = article.content.split('\n').filter(p => p.trim() !== '');
+                                let firstParagraphFound = false;
 
-                        {/* Author/Share Section */}
-                        <div className="document-author">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Author" className="author-avatar" />
-                            <div className="author-info">
-                                <h4>Written by PecPod Team</h4>
-                                <p>Digital Strategy & Design Experts</p>
-                            </div>
+                                return lines.map((line, index) => {
+                                    const trimmed = line.trim();
+
+                                    // 1. Detection Logic
+                                    const isHeading = trimmed.length < 80 && !/[.!?]$/.test(trimmed) && !trimmed.startsWith('"') && !trimmed.startsWith('-');
+                                    const isQuote = trimmed.startsWith('"') || trimmed.startsWith('“');
+                                    const isList = trimmed.startsWith('- ') || trimmed.startsWith('• ');
+                                    const isImage = trimmed.startsWith('http') && (trimmed.match(/\.(jpeg|jpg|gif|png)$/i) != null);
+
+                                    // 2. Rendering Logic
+                                    if (isHeading) {
+                                        return (
+                                            <h3 key={index} className="creative-subhead">
+                                                <span>{trimmed}</span>
+                                            </h3>
+                                        );
+                                    }
+
+                                    if (isQuote) {
+                                        // Remove quotes for cleaner display
+                                        const cleanQuote = trimmed.replace(/^["“]|["”]$/g, '');
+                                        return (
+                                            <blockquote key={index} className="creative-quote">
+                                                <p>{cleanQuote}</p>
+                                            </blockquote>
+                                        );
+                                    }
+
+                                    if (isList) {
+                                        return (
+                                            <ul key={index} className="creative-list">
+                                                <li>{trimmed.replace(/^[-•]\s*/, '')}</li>
+                                            </ul>
+                                        );
+                                    }
+
+                                    if (isImage) {
+                                        return (
+                                            <figure key={index} className="creative-figure">
+                                                <img src={trimmed} alt="Article visual" className="creative-body-image" />
+                                                <figcaption>Visual from {article.title}</figcaption>
+                                            </figure>
+                                        );
+                                    }
+
+                                    // Standard Paragraph with Drop Cap logic
+                                    const className = !firstParagraphFound
+                                        ? "creative-paragraph drop-cap"
+                                        : "creative-paragraph";
+
+                                    if (!isHeading && !isQuote && !isList && !isImage) firstParagraphFound = true;
+
+                                    return (
+                                        <p key={index} className={className}>
+                                            {trimmed}
+                                        </p>
+                                    );
+                                });
+                            })()}
                         </div>
 
-                        <div className="document-footer">
-                            <div className="share-links">
-                                <span>Share this insight:</span>
-                                <button className="share-btn">LinkedIn</button>
-                                <button className="share-btn">Twitter</button>
-                                <button className="share-btn">Email</button>
+                        {/* Social Share (Redesigned) */}
+                        <div className="creative-footer">
+                            <div className="divider-line"></div>
+                            <div className="share-section">
+                                <span>Share this story</span>
+                                <div className="share-icons">
+                                    <button className="share-icon">LN</button>
+                                    <button className="share-icon">TW</button>
+                                    <button className="share-icon">FB</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +195,7 @@ const InsightDetail = () => {
                     <h2 className="related-title">More Insights</h2>
                     <div className="related-grid">
                         {relatedArticles.map(related => (
-                            <Link to={`/insights/${related.id}`} key={related.id} className="related-card">
+                            <Link to={`/insights/${related.id}`} key={related._id} className="related-card">
                                 <div className="related-image">
                                     <img src={related.image} alt={related.title} />
                                 </div>

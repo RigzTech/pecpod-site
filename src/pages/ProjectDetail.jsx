@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { portfolioData } from '../data/portfolioData';
+import axios from 'axios';
 import './ProjectDetail.css';
 
 const ProjectDetail = () => {
@@ -8,21 +8,42 @@ const ProjectDetail = () => {
     const navigate = useNavigate();
     const contentRef = useRef(null);
 
-    // 1. Find the project
-    const project = portfolioData.find(p => p.id === projectId);
-
-    // 2. Find adjacent projects for navigation
-    const currentIndex = portfolioData.findIndex(p => p.id === projectId);
-    const prevProject = currentIndex > 0 ? portfolioData[currentIndex - 1] : null;
-    const nextProject = currentIndex < portfolioData.length - 1 ? portfolioData[currentIndex + 1] : null;
+    const [project, setProject] = useState(null);
+    const [prevProject, setPrevProject] = useState(null);
+    const [nextProject, setNextProject] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        fetchProjectData();
     }, [projectId]);
+
+    const fetchProjectData = async () => {
+        setLoading(true);
+        try {
+            // Fetch all projects to determine next/prev
+            // Optimization: Could create a specific API endpoint for this
+            const res = await axios.get('/api/projects');
+            const projects = res.data;
+
+            const current = projects.find(p => p.id === projectId);
+            setProject(current);
+
+            if (current) {
+                const currentIndex = projects.findIndex(p => p.id === projectId);
+                setPrevProject(currentIndex > 0 ? projects[currentIndex - 1] : null);
+                setNextProject(currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null);
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     // 3. Dynamic Content Observer
     useEffect(() => {
-        if (!contentRef.current) return;
+        if (!contentRef.current || !project) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -46,7 +67,6 @@ const ProjectDetail = () => {
         );
 
         // Select all relevant text and media elements strictly within the content
-        // Select all relevant text and media elements strictly within the content
         const elements = contentRef.current.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, img, div.pull-quote, blockquote, .magazine-grid-img, .magazine-image-full');
 
         elements.forEach((el) => {
@@ -56,6 +76,10 @@ const ProjectDetail = () => {
 
         return () => observer.disconnect();
     }, [project]); // Re-run when project changes
+
+    if (loading) {
+        return <div style={{ paddingTop: '150px', textAlign: 'center', color: '#fff' }}>Loading Project...</div>;
+    }
 
     if (!project) {
         return (
@@ -69,8 +93,6 @@ const ProjectDetail = () => {
     }
 
     // Default content if none exists in data
-    // This allows the page to work gracefully even before the user populates all text
-    // Default content for fallback
     const defaultContent = `
         <div class="magazine-intro">
             <p>Project details are currently being updated. Please check back soon for the full case study.</p>
@@ -140,6 +162,44 @@ const ProjectDetail = () => {
                     <p>{project.category}</p>
                 </div>
             </div>
+
+            {/* Project Intro / Description - Smart Magazine Formatting */}
+            {project.description && (
+                <div className="project-intro-container" style={{ maxWidth: '800px', margin: '0 auto 3rem', padding: '0 2rem' }}>
+                    {(() => {
+                        // Split by newlines and remove empty strings
+                        const lines = project.description.split('\n').filter(p => p.trim() !== '');
+                        let firstParagraphFound = false;
+
+                        return lines.map((line, index) => {
+                            const trimmed = line.trim();
+                            // Heuristic: If line is short and doesn't end in punctuation (mostly), treat as heading
+                            // Adjust threshold as needed. 60 chars is a reasonable "subhead" length.
+                            const isHeading = trimmed.length < 60 && !/[.!?]$/.test(trimmed);
+
+                            if (isHeading) {
+                                return (
+                                    <h3 key={index} className="project-magazine-subhead">
+                                        {trimmed}
+                                    </h3>
+                                );
+                            } else {
+                                const className = !firstParagraphFound
+                                    ? "project-description-paragraph first-paragraph-dropcap"
+                                    : "project-description-paragraph";
+
+                                firstParagraphFound = true; // Mark that we've processed the first real paragraph
+
+                                return (
+                                    <p key={index} className={className}>
+                                        {trimmed}
+                                    </p>
+                                );
+                            }
+                        });
+                    })()}
+                </div>
+            )}
 
             {/* Magazine Content */}
             <div className="project-content-container">

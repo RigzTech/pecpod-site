@@ -10,6 +10,8 @@
   --color-gold: #FFD700;
   --color-gold-light: #FFE44D;
   --color-gold-dark: #B39700;
+  --color-navy-dark: #0B1120;
+  /* Deep Premium Navy from screenshot */
 
   /* Gradients */
   --gradient-gold: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);

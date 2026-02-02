@@ -1,9 +1,22 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { insightsData } from '../data/insightsData';
+import axios from 'axios';
 
 const HomeInsights = () => {
-    // Get latest 3 insights
-    const latestInsights = insightsData.slice(0, 3);
+    const [latestInsights, setLatestInsights] = useState([]);
+
+    useEffect(() => {
+        const fetchInsights = async () => {
+            try {
+                const res = await axios.get('/api/insights');
+                // Slice top 3
+                setLatestInsights(res.data.slice(0, 3));
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        fetchInsights();
+    }, []);
 
     return (
         <section className="section">
@@ -18,7 +31,7 @@ const HomeInsights = () => {
 
                 <div className="insights-grid">
                     {latestInsights.map((insight) => (
-                        <div key={insight.id} className="insight-card group">
+                        <div key={insight._id} className="insight-card group">
                             <div className="insight-image-wrapper">
                                 <img src={insight.image} alt={insight.title} className="insight-image" />
                                 <div className="insight-overlay">

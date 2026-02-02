@@ -1,21 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { insightsData } from '../data/insightsData';
+import axios from 'axios';
 import './Insights.css';
 
 const Insights = () => {
-    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const categories = ['All', 'Design Trends', 'Brand Strategy', 'Digital', 'Case Studies'];
-
-    // Use imported data
-    const articles = insightsData;
-
-    const filteredArticles = selectedCategory === 'All'
-        ? articles
-        : articles.filter(article => article.category === selectedCategory);
+    useEffect(() => {
+        const fetchInsights = async () => {
+            try {
+                const res = await axios.get('/api/insights');
+                setArticles(res.data);
+                setLoading(false);
+            } catch (err) {
+                console.error(err);
+                setLoading(false);
+            }
+        };
+        fetchInsights();
+    }, []);
 
     const featuredArticles = articles.filter(article => article.featured);
+
+    if (loading) return <div style={{ padding: '100px', textAlign: 'center' }}>Loading Insights...</div>;
 
     return (
         <section className="insights-page">
@@ -31,66 +39,61 @@ const Insights = () => {
                 </div>
 
                 {/* Featured Articles */}
-                <div className="featured-section">
-                    <h2 className="section-heading">Featured Articles</h2>
-                    <div className="featured-grid">
-                        {featuredArticles.map((article) => (
-                            <article key={article.id} className="featured-card">
-                                <Link to={`/insights/${article.id}`} className="featured-link-wrapper">
-                                    <div className="featured-image">
-                                        {article.image ? (
-                                            <img src={article.image} alt={article.title} />
-                                        ) : (
-                                            <div className="featured-placeholder">
-                                                <span className="placeholder-icon">📝</span>
-                                            </div>
-                                        )}
-                                        <span className="category-badge">{article.category}</span>
-                                    </div>
-                                    <div className="featured-content">
-                                        <h3 className="article-title">{article.title}</h3>
-                                        <p className="article-excerpt">{article.excerpt}</p>
-                                        <div className="article-meta">
-                                            <span className="meta-date">{article.date}</span>
-                                            <span className="meta-divider">•</span>
-                                            <span className="meta-read-time">{article.readTime}</span>
+                {featuredArticles.length > 0 && (
+                    <div className="featured-section">
+                        <h2 className="section-heading">Featured Articles</h2>
+                        <div className="featured-grid">
+                            {featuredArticles.map((article) => (
+                                <article key={article._id} className="featured-card">
+                                    <Link to={`/insights/${article.id || article._id}`} className="featured-link-wrapper">
+                                        <div className="featured-image">
+                                            {article.image ? (
+                                                <img src={article.image} alt={article.title} />
+                                            ) : (
+                                                <div className="featured-placeholder gradient-fallback">
+                                                    <span className="placeholder-text">PecPod Insight</span>
+                                                </div>
+                                            )}
+                                            {article.category && <span className="category-badge">{article.category}</span>}
                                         </div>
-                                        <span className="read-more-btn">
-                                            Read Article <span className="arrow">→</span>
-                                        </span>
-                                    </div>
-                                </Link>
-                            </article>
-                        ))}
+                                        <div className="featured-content">
+                                            <h3 className="article-title">{article.title}</h3>
+                                            <p className="article-excerpt">{article.excerpt}</p>
+                                            <div className="article-meta">
+                                                <span className="meta-date">{article.date}</span>
+                                                <span className="meta-divider">•</span>
+                                                <span className="meta-read-time">{article.readTime}</span>
+                                            </div>
+                                            <span className="read-more-btn">
+                                                Read Article <span className="arrow">→</span>
+                                            </span>
+                                        </div>
+                                    </Link>
+                                </article>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
 
-                {/* Category Filter */}
+                {/* All Articles - No Category Filter */}
                 <div className="category-filter">
                     <h2 className="section-heading">All Articles</h2>
-                    <div className="filter-buttons">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                className={`filter-btn ${selectedCategory === category ? 'active' : ''}`}
-                                onClick={() => setSelectedCategory(category)}
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
                 </div>
 
                 {/* Articles Grid */}
                 <div className="articles-grid">
-                    {filteredArticles.map((article) => (
-                        <article key={article.id} className="article-card">
-                            <Link to={`/insights/${article.id}`} className="article-link-wrapper">
+                    {articles.map((article) => (
+                        <article key={article._id} className="article-card">
+                            <Link to={`/insights/${article.id || article._id}`} className="article-link-wrapper">
                                 <div className="article-image">
-                                    <div className="article-placeholder">
-                                        <span className="placeholder-icon">✍️</span>
-                                    </div>
-                                    <span className="category-tag">{article.category}</span>
+                                    {article.image ? (
+                                        <img src={article.image} alt={article.title} />
+                                    ) : (
+                                        <div className="article-placeholder gradient-fallback">
+                                            {/* Gradient handled by CSS */}
+                                        </div>
+                                    )}
+                                    {article.category && <span className="category-tag">{article.category}</span>}
                                 </div>
                                 <div className="article-body">
                                     <h3 className="article-card-title">{article.title}</h3>

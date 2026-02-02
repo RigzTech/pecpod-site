@@ -1,14 +1,32 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Portfolio.css';
 
-import { portfolioData } from '../data/portfolioData';
-
 const Portfolio = ({ activeFilter }) => {
-    // Use imported data
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const res = await axios.get('/api/projects');
+                setProjects(res.data);
+                setLoading(false);
+            } catch (err) {
+                console.error('Failed to fetch projects', err);
+                setLoading(false);
+            }
+        };
+        fetchProjects();
+    }, []);
+
+    // Use fetched data
     const projectsWithSizes = useMemo(() => {
+        if (loading || projects.length === 0) return [];
+
         // Standard Fisher-Yates Shuffle for unbiased randomness
-        const shuffled = [...portfolioData];
+        const shuffled = [...projects];
         for (let i = shuffled.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -18,8 +36,8 @@ const Portfolio = ({ activeFilter }) => {
             const r = Math.random();
             let size = 'small';
 
-            // Targeted Randomization:
-            // "One or two grids in the middle, vertically and bigger"
+            // Custom size logic from DB or randomize if not preserved
+            // For now, keep the random logic derived from index position in shuffled list
 
             // Define a "Middle Zone" (e.g., skip first 4 and last 4)
             const isMiddle = index > 3 && index < shuffled.length - 4;
@@ -38,7 +56,7 @@ const Portfolio = ({ activeFilter }) => {
 
             return { ...project, size };
         });
-    }, []);
+    }, [projects, loading]);
 
     const filteredProjects = activeFilter === 'ALL'
         ? projectsWithSizes
@@ -47,9 +65,13 @@ const Portfolio = ({ activeFilter }) => {
     const navigate = useNavigate();
 
     const handleProjectClick = (project) => {
-        // Navigate to the internal detail page
+        // Navigate to the internal detail page using custom id (slug)
         navigate(`/work/${project.id}`);
     };
+
+    if (loading) {
+        return <div style={{ textAlign: 'center', padding: '50px' }}>Loading Projects...</div>;
+    }
 
     return (
         <section id="portfolio" className="portfolio section">
@@ -57,7 +79,7 @@ const Portfolio = ({ activeFilter }) => {
                 {/* Masonry Grid */}
                 <div className="masonry-grid">
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className={`masonry-item ${project.size}`}>
+                        <div key={project._id} className={`masonry-item ${project.size}`}>
                             <div className="project-card group">
                                 <div className="project-image-wrapper" onClick={() => handleProjectClick(project)} style={{ cursor: 'pointer' }}>
                                     {/* Main Content Image */}

@@ -6,13 +6,14 @@
     z-index: 1000;
     transition: all 0.4s ease;
     padding: 1.5rem 0;
-    background: #171717;
+    background: var(--color-navy-dark);
     /* Always dark to match v2 header style */
 }
 
 .navbar-scrolled {
     padding: 1rem 0;
-    background: rgba(23, 23, 23, 0.95);
+    background: rgba(11, 17, 32, 0.95);
+    /* Navy Dark with opacity */
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

@@ -124,6 +124,90 @@
     gap: 4rem;
 }
 
+/* === Top Intro / Description === */
+.project-intro-container {
+    font-family: 'Playfair Display', serif;
+    /* Switch to Serif for main intro/body too for elegance */
+    color: #2c2c2c;
+    padding-top: 2rem;
+}
+
+/* Magazine Subheads (detected automatically) */
+.project-magazine-subhead {
+    font-family: 'Inter', sans-serif;
+    /* Contrast with Sans */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #B8860B;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-top: 1px solid rgba(184, 134, 11, 0.3);
+    padding-top: 2rem;
+    text-align: center;
+    /* Centered dividers */
+}
+
+/* Main Body Text - The "Story" */
+.project-description-paragraph {
+    margin-bottom: 2rem;
+    font-size: 1.35rem;
+    /* Larger, more readable */
+    line-height: 2;
+    /* Generous leading */
+    color: #333;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+.doc-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* First Letter Drop Cap - ULTRA Premium */
+.magazine-intro p:first-of-type::first-letter,
+.first-paragraph-dropcap::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    line-height: 0.8;
+    font-weight: 700;
+    margin-right: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: -0.5rem;
+    color: #B8860B;
+    /* Gold */
+    /* Creative Touch: Text clipped background if possible, or just color */
+}
+
+/* Unique Editorial Intro Section */
+.magazine-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 3rem auto 5rem;
+    max-width: 960px;
+    text-align: center;
+    /* Centered Intro for impact */
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Decorator for Intro */
+.magazine-intro::after {
+    content: '✦';
+    display: block;
+    font-style: normal;
+    color: #B8860B;
+    font-size: 1.5rem;
+    margin: 2rem auto 0;
+    opacity: 0.6;
+}
+
 /* --- Magazine Global Styles --- */
 .magazine-layout {
     font-size: 1.2rem;
@@ -225,16 +309,40 @@
     opacity: 0.5;
 }
 
-/* Images */
+/* === Images (Inserted & Structural) === */
+.magazine-layout img,
+.project-detail-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 3.5rem auto;
+    /* Generous spacing */
+    border-radius: 4px;
+    /* Subtle rounding */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    /* Deep, soft shadow for depth */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+
+.magazine-layout img:hover,
+.project-detail-image:hover {
+    transform: translateY(-5px);
+    /* Lift effect */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
 .magazine-image-full {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    /* Break out of container */
     max-width: 100vw;
     height: auto;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     display: block;
+    border-radius: 0;
+    /* Full width images often look better square */
+    box-shadow: none;
+    /* Let them bleed */
 }
 
 .magazine-grid-2 {
@@ -248,6 +356,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.5s ease;
 }
 

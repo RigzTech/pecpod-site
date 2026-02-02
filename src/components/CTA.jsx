@@ -18,7 +18,7 @@ const CTA = () => {
             </div>
 
             <style>{`
-                .bg-dark { background-color: var(--color-black); }
+                .bg-dark { background-color: var(--color-navy-dark); }
                 .text-white { color: var(--color-white); }
                 .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
                 .max-w-2xl { max-width: 42rem; }

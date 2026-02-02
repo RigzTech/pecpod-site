@@ -1,5 +1,5 @@
 .filter-bar {
-    background: #111827;
+    background: var(--color-navy-dark);
     /* Exact dark navy from reference */
     padding: 20px 0;
     /* py-5 equivalent */
@@ -13,7 +13,7 @@
 .filter-bar-sticky {
     position: sticky;
     top: 70px;
-    background: #111827;
+    background: var(--color-navy-dark);
     backdrop-filter: none;
     /* Reference is opaque */
 }
