@@ -1,0 +1,163 @@
+[main 01c35b6] Update project files
+ 167 files changed, 50382 insertions(+), 5 deletions(-)
+ create mode 100644 cpanel-deployment/package.json
+ create mode 100644 cpanel-deployment/public/assets/about_core_value_expanded_1767604756577.png
+ create mode 100644 cpanel-deployment/public/assets/anti_hero_brand_insight.png
+ create mode 100644 cpanel-deployment/public/assets/brand_identity_service_1767606603829.png
+ create mode 100644 cpanel-deployment/public/assets/data_poetry_insight.png
+ create mode 100644 cpanel-deployment/public/assets/deep_work_insight.png
+ create mode 100644 cpanel-deployment/public/assets/digitalisation_service_1767606586223.png
+ create mode 100644 cpanel-deployment/public/assets/gold_psychology_insight.png
+ create mode 100644 cpanel-deployment/public/assets/index-BbyWW8Te.js
+ create mode 100644 cpanel-deployment/public/assets/index-qTISOHIW.css
+ create mode 100644 cpanel-deployment/public/assets/insights_featured_1_1767607190153.png
+ create mode 100644 cpanel-deployment/public/assets/legacy_nonprofit_insight.png
+ create mode 100644 cpanel-deployment/public/assets/messaging_service_1767606650764.png
+ create mode 100644 cpanel-deployment/public/assets/print_design_service_1767606671030.png
+ create mode 100644 cpanel-deployment/public/assets/report_design_service_1767606632592.png
+ create mode 100644 cpanel-deployment/public/assets/services_expanded_digitalisation_1767603722731.png
+ create mode 100644 cpanel-deployment/public/assets/services_faq_expanded_1767604150891.png
+ create mode 100644 cpanel-deployment/public/assets/services_footer_section_1767598468586.png
+ create mode 100644 cpanel-deployment/public/assets/services_hero_1767597247128.png
+ create mode 100644 cpanel-deployment/public/assets/services_middle_section_1_1767598204135.png
+ create mode 100644 cpanel-deployment/public/assets/services_middle_section_2_1767598241926.png
+ create mode 100644 cpanel-deployment/public/assets/services_middle_section_3_1767598290073.png
+ create mode 100644 cpanel-deployment/public/assets/services_middle_section_4_1767598341456.png
+ create mode 100644 cpanel-deployment/public/assets/services_middle_section_5_print_design_1767598398815.png
+ create mode 100644 cpanel-deployment/public/assets/services_page_top_1767603207963.png
+ create mode 100644 cpanel-deployment/public/assets/services_top_section_1767598155614.png
+ create mode 100644 cpanel-deployment/public/assets/ux_democracy_insight.png
+ create mode 100644 cpanel-deployment/public/index.html
+ create mode 100644 cpanel-deployment/public/pecpod-logo.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz Report 4.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz Report1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz Report2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz Report3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz-Annual Progress Report.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz-report-cover.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz Report/Agribiz-report-cover2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Agribiz.docx
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/Green-biz-poster-web.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/KCIC Annual Report 2018-19 with 3mm.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/KCIC Report 2019-2019.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/KCIC Roll up Bnner copy.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/KCIC story Final.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/KCL Capability Statement.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/Live Green Magazine.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Environmental/Our Story-KCIC.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual Report 2020.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual Report 4.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual Report 5.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual report 2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual report 3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/Annual report1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/AnnualReport_2020_cover.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/NAYA Annual Report/AnnualReport_2020_pages.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/Safire Report.docx
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/Safire Report.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/Safire cover1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/Safirepage3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/safire-cover-page.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/Safire/safirepage2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/Changing Faces, Changing Spaces VII.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/Changing Faces, Changing Spaces VII_Page_01.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/Changing Faces, Changing Spaces VII_Page_05.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/Changing Faces, Changing Spaces VII_Page_09.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/Changing Faces, Changing Spaces VII_Page_15.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/UHAI Report/UHAI REPORt.docx
+ create mode 100644 cpanel-deployment/public/portfolio-files/Annual Reports/vWFRvxGnRJl.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Brand identity/Logo Design/CODECS Logo.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Brand identity/Logo Design/revised-logo.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Brand identity/Posters/Promo-Poster.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Brand identity/Posters/deadline extended.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Corporate/poverty-4561704_1920.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYRH-Framework.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYRH-Framework1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYRH-Framework2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYSRH Framework 2019-2022.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYSRH Framework4.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYSRH Framework5.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYSRH Framework6.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/AYRH-Framework/AYSRH Framework7.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Mid-Term-Report/Mid Term Evaluation Report-Migori county multisectoral action plan (2018-2019).pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Mid-Term-Report/Mid-term-Report1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Mid-Term-Report/Mid-term-Report2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/National COVID-19/National  COVID 19-1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/National COVID-19/National  COVID 19-2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/National COVID-19/National  COVID 19-3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/National COVID-19/National COVID-19 Vaccine Deployment Plan outline .pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/SOMALILAND- AN OVERVIEW OF THE 2021 PARLIAMENTARY AND LOCAL COUNCIL ELECTIONS.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Screenshot 2025-12-30 at 13.48.16.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Somaliland-1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Somaliland-2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Somaliland-3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Somaliland-cover.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Thin_Book_Hard_Cover_Mockup_2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Government/Somaliland-elections/Untitled document.docx
+ create mode 100644 cpanel-deployment/public/portfolio-files/Infographics/Somaliland-Elections-Timeline.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Infographics/The-Electoral-Process-In-Somaliland-copy.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Infographics/Theory-of-Change-R.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/Live Green/Cover mockup.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/Live Green/Cover-pages-1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/Live Green/Live Green Magazine.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/Live Green/inner pages.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR Newsletter.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR Newsletter2.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR Newsletter3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR Newsletter4.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR Newsletter5.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR-Newsletter-cover.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR-Newsletter1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Magazines/SRHR/SRHR_Alliance_newslette_key_cover.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_001.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_011.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_012.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_033.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_047.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_062.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_078.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_079.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_PRINT_A4_2_1_Page_104.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_cover.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_cover1.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Adolescent Advocacy Toolkit/AdolescentAdvocacyToolkit_cover3.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Maputo_Protocol Policy/Maputo_Protocol_POLICY_BRIEF_Page_1.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Maputo_Protocol Policy/Maputo_Protocol_POLICY_BRIEF_Page_2.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Maputo_Protocol Policy/Maputo_Protocol_POLICY_BRIEF_Page_3.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Maputo_Protocol Policy/Maputo_Protocol_POLICY_BRIEF_Page_4.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Media policy brief/Media Policy Brief on the World Tuberculosis Day_Page_1.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/Media policy brief/Media Policy Brief on the World Tuberculosis Day_Page_2.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/NAYA/The African Commission On Human and Peoples Rights Policy Brief _Page_1.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Policy/NAYA/The African Commission On Human and Peoples Rights Policy Brief _Page_2.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Story telling/Storytelling.docx
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/BvAT strategic plan/A4_Brochure_Mockup_Cover_02.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/BvAT strategic plan/BvAT Strategic Plan Summary 2_Page_01.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/BvAT strategic plan/BvAT Strategic Plan Summary 2_Page_12.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/SRHR strategic plan/3861196d-3a0f-4e0a-9881-eb57946e9333.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/SRHR strategic plan/A4_Brochure_Mockup_Inside_01.png
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/SRHR strategic plan/Strategic Plan 2021-2025 interactive_Page_01.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/SRHR strategic plan/Strategic Plan 2021-2025 interactive_Page_76.jpg
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/Strategic Plan 2021-2025 interactive.pdf
+ create mode 100644 cpanel-deployment/public/portfolio-files/Strategic Plan/Strategic-Plan-2021-2024-BvAT-PRINT.pdf
+ create mode 100644 cpanel-deployment/public/vite.svg
+ create mode 100644 cpanel-deployment/server/.env.template
+ create mode 100644 cpanel-deployment/server/index.js
+ create mode 100644 cpanel-deployment/server/middleware/authMiddleware.js
+ create mode 100644 cpanel-deployment/server/models/Insight.js
+ create mode 100644 cpanel-deployment/server/models/Project.js
+ create mode 100644 cpanel-deployment/server/models/User.js
+ create mode 100644 cpanel-deployment/server/routes/auth.js
+ create mode 100644 cpanel-deployment/server/routes/insights.js
+ create mode 100644 cpanel-deployment/server/routes/projects.js
+ create mode 100644 cpanel-deployment/server/routes/upload.js
+ create mode 100644 cpanel-deployment/server/seed.js
+ create mode 100644 cpanel-deployment/server/seed_portfolio_complete.js
+ create mode 100644 cpanel-deployment/server/seed_portfolio_smart_v2.js
+ create mode 100644 cpanel-deployment/server/seed_portfolio_strict.js
+ create mode 100644 cpanel-deployment/server/test_db.js
+ create mode 100644 cpanel-deployment/server/test_upload_simple.js
+ create mode 100644 git_log_output.txt
+ create mode 100644 git_reset_output.txt
+ create mode 100644 git_status_output.txt
+ create mode 100644 package_cpanel.json
+ create mode 100644 server/.env.production

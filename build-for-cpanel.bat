@@ -28,15 +28,19 @@ mkdir "cpanel-deployment\public"
 echo Deployment folder created!
 echo.
 
+
 REM Step 3: Copy server files
 echo [3/4] Copying server files...
 xcopy "server\*.js" "cpanel-deployment\server\" /Y
-xcopy "server\package.json" "cpanel-deployment\server\" /Y
 xcopy "server\.env.template" "cpanel-deployment\server\" /Y
 xcopy "server\models" "cpanel-deployment\server\models\" /E /I /Y
 xcopy "server\routes" "cpanel-deployment\server\routes\" /E /I /Y
 xcopy "server\middleware" "cpanel-deployment\server\middleware\" /E /I /Y
 mkdir "cpanel-deployment\server\uploads"
+
+REM Copy the SPECIAL cPanel package.json to the ROOT of deployment
+copy "package_cpanel.json" "cpanel-deployment\package.json" /Y
+
 echo Server files copied!
 echo.
 
