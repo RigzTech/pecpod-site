@@ -28,3 +28,7 @@ deploy.zip
 dist.zip
 *.zip
 *.pdf
+
+# Environment and Logs
+.env*
+*.txt

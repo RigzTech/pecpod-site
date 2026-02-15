@@ -1,0 +1,174 @@
+commit 01c35b6131bfe0c14cbbce9836de42cf39e5b6a5
+Author: RigzTech <fredrickarara@example.com>
+Date:   Wed Feb 11 09:11:41 2026 +0300
+
+    Update project files
+
+ .gitignore                                         |     5 +
+ build-for-cpanel.bat                               |     6 +-
+ cpanel-deployment/package.json                     |    23 +
+ .../about_core_value_expanded_1767604756577.png    |   Bin 0 -> 78887 bytes
+ .../public/assets/anti_hero_brand_insight.png      |   Bin 0 -> 788215 bytes
+ .../brand_identity_service_1767606603829.png       |   Bin 0 -> 821359 bytes
+ .../public/assets/data_poetry_insight.png          |   Bin 0 -> 652177 bytes
+ .../public/assets/deep_work_insight.png            |   Bin 0 -> 468242 bytes
+ .../digitalisation_service_1767606586223.png       |   Bin 0 -> 556909 bytes
+ .../public/assets/gold_psychology_insight.png      |   Bin 0 -> 559764 bytes
+ cpanel-deployment/public/assets/index-BbyWW8Te.js  |    42 +
+ cpanel-deployment/public/assets/index-qTISOHIW.css |     1 +
+ .../assets/insights_featured_1_1767607190153.png   |   Bin 0 -> 527871 bytes
+ .../public/assets/legacy_nonprofit_insight.png     |   Bin 0 -> 539729 bytes
+ .../assets/messaging_service_1767606650764.png     |   Bin 0 -> 408351 bytes
+ .../assets/print_design_service_1767606671030.png  |   Bin 0 -> 784235 bytes
+ .../assets/report_design_service_1767606632592.png |   Bin 0 -> 781699 bytes
+ ...vices_expanded_digitalisation_1767603722731.png |   Bin 0 -> 210145 bytes
+ .../assets/services_faq_expanded_1767604150891.png |   Bin 0 -> 97719 bytes
+ .../services_footer_section_1767598468586.png      |   Bin 0 -> 322104 bytes
+ .../public/assets/services_hero_1767597247128.png  |   Bin 0 -> 623169 bytes
+ .../services_middle_section_1_1767598204135.png    |   Bin 0 -> 276924 bytes
+ .../services_middle_section_2_1767598241926.png    |   Bin 0 -> 545123 bytes
+ .../services_middle_section_3_1767598290073.png    |   Bin 0 -> 417452 bytes
+ .../services_middle_section_4_1767598341456.png    |   Bin 0 -> 400336 bytes
+ ...middle_section_5_print_design_1767598398815.png |   Bin 0 -> 232638 bytes
+ .../assets/services_page_top_1767603207963.png     |   Bin 0 -> 95674 bytes
+ .../assets/services_top_section_1767598155614.png  |   Bin 0 -> 839253 bytes
+ .../public/assets/ux_democracy_insight.png         |   Bin 0 -> 463083 bytes
+ cpanel-deployment/public/index.html                |    24 +
+ cpanel-deployment/public/pecpod-logo.jpg           |   Bin 0 -> 67169 bytes
+ .../Agribiz Report/Agribiz Report 4.png            |   Bin 0 -> 762137 bytes
+ .../Agribiz Report/Agribiz Report1.png             |   Bin 0 -> 2266568 bytes
+ .../Agribiz Report/Agribiz Report2.png             |   Bin 0 -> 1226719 bytes
+ .../Agribiz Report/Agribiz Report3.png             |   Bin 0 -> 932309 bytes
+ .../Agribiz-Annual Progress Report.pdf             |   Bin 0 -> 19660030 bytes
+ .../Agribiz Report/Agribiz-report-cover.png        |   Bin 0 -> 1413061 bytes
+ .../Agribiz Report/Agribiz-report-cover2.png       |   Bin 0 -> 1333751 bytes
+ .../portfolio-files/Annual Reports/Agribiz.docx    |   Bin 0 -> 7344 bytes
+ .../Environmental/Green-biz-poster-web.png         |   Bin 0 -> 3088386 bytes
+ .../KCIC Annual Report 2018-19 with 3mm.pdf        |   Bin 0 -> 15968023 bytes
+ .../Environmental/KCIC Report 2019-2019.pdf        |   Bin 0 -> 15264516 bytes
+ .../Environmental/KCIC Roll up Bnner copy.pdf      | 48636 +++++++++++++++++++
+ .../Environmental/KCIC story Final.pdf             |   Bin 0 -> 8738997 bytes
+ .../Environmental/KCL Capability Statement.pdf     |   Bin 0 -> 4798847 bytes
+ .../Environmental/Live Green Magazine.pdf          |   Bin 0 -> 29632567 bytes
+ .../Environmental/Our Story-KCIC.pdf               |   Bin 0 -> 14149193 bytes
+ .../NAYA Annual Report/Annual Report 2020.pdf      |   Bin 0 -> 4130353 bytes
+ .../NAYA Annual Report/Annual Report 4.png         |   Bin 0 -> 4451632 bytes
+ .../NAYA Annual Report/Annual Report 5.png         |   Bin 0 -> 341307 bytes
+ .../NAYA Annual Report/Annual report 2.png         |   Bin 0 -> 4456956 bytes
+ .../NAYA Annual Report/Annual report 3.png         |   Bin 0 -> 3539508 bytes
+ .../NAYA Annual Report/Annual report1.png          |   Bin 0 -> 1732384 bytes
+ .../NAYA Annual Report/AnnualReport_2020_cover.png |   Bin 0 -> 1464710 bytes
+ .../NAYA Annual Report/AnnualReport_2020_pages.png |   Bin 0 -> 2716673 bytes
+ .../Annual Reports/Safire/Safire Report.docx       |   Bin 0 -> 8173 bytes
+ .../Annual Reports/Safire/Safire Report.pdf        |   Bin 0 -> 17482872 bytes
+ .../Annual Reports/Safire/Safire cover1.png        |   Bin 0 -> 2173309 bytes
+ .../Annual Reports/Safire/Safirepage3.png          |   Bin 0 -> 3116517 bytes
+ .../Annual Reports/Safire/safire-cover-page.png    |   Bin 0 -> 2100145 bytes
+ .../Annual Reports/Safire/safirepage2.png          |   Bin 0 -> 2201696 bytes
+ .../Changing Faces, Changing Spaces VII.pdf        |   Bin 0 -> 6769238 bytes
+ ...Changing Faces, Changing Spaces VII_Page_01.png |   Bin 0 -> 269223 bytes
+ ...Changing Faces, Changing Spaces VII_Page_05.png |   Bin 0 -> 170287 bytes
+ ...Changing Faces, Changing Spaces VII_Page_09.png |   Bin 0 -> 131978 bytes
+ ...Changing Faces, Changing Spaces VII_Page_15.png |   Bin 0 -> 169359 bytes
+ .../Annual Reports/UHAI Report/UHAI REPORt.docx    |   Bin 0 -> 8003 bytes
+ .../portfolio-files/Annual Reports/vWFRvxGnRJl.png |   Bin 0 -> 4661409 bytes
+ .../Brand identity/Logo Design/CODECS Logo.png     |   Bin 0 -> 160034 bytes
+ .../Brand identity/Logo Design/revised-logo.jpg    |   Bin 0 -> 2288080 bytes
+ .../Brand identity/Posters/Promo-Poster.png        |   Bin 0 -> 1053933 bytes
+ .../Brand identity/Posters/deadline extended.png   |   Bin 0 -> 2574304 bytes
+ .../Corporate/poverty-4561704_1920.jpg             |   Bin 0 -> 253420 bytes
+ .../Government/AYRH-Framework/AYRH-Framework.png   |   Bin 0 -> 1083726 bytes
+ .../Government/AYRH-Framework/AYRH-Framework1.png  |   Bin 0 -> 1122583 bytes
+ .../Government/AYRH-Framework/AYRH-Framework2.png  |   Bin 0 -> 1157287 bytes
+ .../AYRH-Framework/AYSRH Framework 2019-2022.pdf   |   Bin 0 -> 4778874 bytes
+ .../Government/AYRH-Framework/AYSRH Framework4.png |   Bin 0 -> 367821 bytes
+ .../Government/AYRH-Framework/AYSRH Framework5.png |   Bin 0 -> 554869 bytes
+ .../Government/AYRH-Framework/AYSRH Framework6.png |   Bin 0 -> 2498866 bytes
+ .../Government/AYRH-Framework/AYSRH Framework7.png |   Bin 0 -> 1701513 bytes
+ ...ounty multisectoral action plan (2018-2019).pdf |   Bin 0 -> 4338184 bytes
+ .../Mid-Term-Report/Mid-term-Report1.png           |   Bin 0 -> 743216 bytes
+ .../Mid-Term-Report/Mid-term-Report2.png           |   Bin 0 -> 850726 bytes
+ .../National COVID-19/National  COVID 19-1.png     |   Bin 0 -> 1890486 bytes
+ .../National COVID-19/National  COVID 19-2.png     |   Bin 0 -> 572169 bytes
+ .../National COVID-19/National  COVID 19-3.png     |   Bin 0 -> 577093 bytes
+ ...l COVID-19 Vaccine Deployment Plan outline .pdf |   Bin 0 -> 3726573 bytes
+ ...1 PARLIAMENTARY AND LOCAL COUNCIL ELECTIONS.pdf |   Bin 0 -> 2531323 bytes
+ .../Screenshot 2025-12-30 at 13.48.16.png          |   Bin 0 -> 610106 bytes
+ .../Somaliland-elections/Somaliland-1.png          |   Bin 0 -> 1420068 bytes
+ .../Somaliland-elections/Somaliland-2.png          |   Bin 0 -> 374980 bytes
+ .../Somaliland-elections/Somaliland-3.png          |   Bin 0 -> 642220 bytes
+ .../Somaliland-elections/Somaliland-cover.png      |   Bin 0 -> 1357747 bytes
+ .../Thin_Book_Hard_Cover_Mockup_2.png              |   Bin 0 -> 1661811 bytes
+ .../Somaliland-elections/Untitled document.docx    |   Bin 0 -> 8749 bytes
+ .../Infographics/Somaliland-Elections-Timeline.jpg |   Bin 0 -> 1392317 bytes
+ .../The-Electoral-Process-In-Somaliland-copy.jpg   |   Bin 0 -> 4623181 bytes
+ .../Infographics/Theory-of-Change-R.jpg            |   Bin 0 -> 7276291 bytes
+ .../Magazines/Live Green/Cover mockup.png          |   Bin 0 -> 1143752 bytes
+ .../Magazines/Live Green/Cover-pages-1.png         |   Bin 0 -> 1688253 bytes
+ .../Magazines/Live Green/Live Green Magazine.pdf   |   Bin 0 -> 29632567 bytes
+ .../Magazines/Live Green/inner pages.png           |   Bin 0 -> 1726755 bytes
+ .../Magazines/SRHR/SRHR Newsletter.png             |   Bin 0 -> 1522520 bytes
+ .../Magazines/SRHR/SRHR Newsletter2.png            |   Bin 0 -> 2813149 bytes
+ .../Magazines/SRHR/SRHR Newsletter3.png            |   Bin 0 -> 365237 bytes
+ .../Magazines/SRHR/SRHR Newsletter4.png            |   Bin 0 -> 1859220 bytes
+ .../Magazines/SRHR/SRHR Newsletter5.png            |   Bin 0 -> 2039640 bytes
+ .../Magazines/SRHR/SRHR-Newsletter-cover.png       |   Bin 0 -> 1010388 bytes
+ .../Magazines/SRHR/SRHR-Newsletter1.png            |   Bin 0 -> 981380 bytes
+ .../SRHR/SRHR_Alliance_newslette_key_cover.pdf     |   Bin 0 -> 3689542 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_001.jpg |   Bin 0 -> 895513 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_011.jpg |   Bin 0 -> 837405 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_012.jpg |   Bin 0 -> 1425140 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_033.jpg |   Bin 0 -> 458772 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_047.jpg |   Bin 0 -> 609369 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_062.jpg |   Bin 0 -> 395233 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_078.jpg |   Bin 0 -> 388011 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_079.jpg |   Bin 0 -> 899439 bytes
+ ...escentAdvocacyToolkit_PRINT_A4_2_1_Page_104.jpg |   Bin 0 -> 449895 bytes
+ .../AdolescentAdvocacyToolkit_cover.png            |   Bin 0 -> 1192332 bytes
+ .../AdolescentAdvocacyToolkit_cover1.png           |   Bin 0 -> 1249371 bytes
+ .../AdolescentAdvocacyToolkit_cover3.png           |   Bin 0 -> 1241060 bytes
+ .../Maputo_Protocol_POLICY_BRIEF_Page_1.jpg        |   Bin 0 -> 1567523 bytes
+ .../Maputo_Protocol_POLICY_BRIEF_Page_2.jpg        |   Bin 0 -> 1836645 bytes
+ .../Maputo_Protocol_POLICY_BRIEF_Page_3.jpg        |   Bin 0 -> 1896666 bytes
+ .../Maputo_Protocol_POLICY_BRIEF_Page_4.jpg        |   Bin 0 -> 426731 bytes
+ ... Brief on the World Tuberculosis Day_Page_1.jpg |   Bin 0 -> 1551715 bytes
+ ... Brief on the World Tuberculosis Day_Page_2.jpg |   Bin 0 -> 1812728 bytes
+ ...man and Peoples Rights Policy Brief _Page_1.jpg |   Bin 0 -> 1172481 bytes
+ ...man and Peoples Rights Policy Brief _Page_2.jpg |   Bin 0 -> 1205356 bytes
+ .../Story telling/Storytelling.docx                |   Bin 0 -> 6822 bytes
+ .../A4_Brochure_Mockup_Cover_02.png                |   Bin 0 -> 2359034 bytes
+ .../BvAT Strategic Plan Summary 2_Page_01.jpg      |   Bin 0 -> 999503 bytes
+ .../BvAT Strategic Plan Summary 2_Page_12.jpg      |   Bin 0 -> 444677 bytes
+ .../3861196d-3a0f-4e0a-9881-eb57946e9333.png       |   Bin 0 -> 1773417 bytes
+ .../A4_Brochure_Mockup_Inside_01.png               |   Bin 0 -> 1670520 bytes
+ ...trategic Plan 2021-2025 interactive_Page_01.jpg |   Bin 0 -> 939545 bytes
+ ...trategic Plan 2021-2025 interactive_Page_76.jpg |   Bin 0 -> 826917 bytes
+ .../Strategic Plan 2021-2025 interactive.pdf       |   Bin 0 -> 9897587 bytes
+ .../Strategic-Plan-2021-2024-BvAT-PRINT.pdf        |   Bin 0 -> 26603412 bytes
+ cpanel-deployment/public/vite.svg                  |     1 +
+ cpanel-deployment/server/.env.template             |    19 +
+ cpanel-deployment/server/index.js                  |    76 +
+ .../server/middleware/authMiddleware.js            |    27 +
+ cpanel-deployment/server/models/Insight.js         |    18 +
+ cpanel-deployment/server/models/Project.js         |    21 +
+ cpanel-deployment/server/models/User.js            |     9 +
+ cpanel-deployment/server/routes/auth.js            |   112 +
+ cpanel-deployment/server/routes/insights.js        |   109 +
+ cpanel-deployment/server/routes/projects.js        |    95 +
+ cpanel-deployment/server/routes/upload.js          |    63 +
+ cpanel-deployment/server/seed.js                   |    68 +
+ .../server/seed_portfolio_complete.js              |   127 +
+ .../server/seed_portfolio_smart_v2.js              |   299 +
+ cpanel-deployment/server/seed_portfolio_strict.js  |   323 +
+ cpanel-deployment/server/test_db.js                |    29 +
+ cpanel-deployment/server/test_upload_simple.js     |    37 +
+ git_log_output.txt                                 |     5 +
+ git_reset_output.txt                               |     0
+ git_status_output.txt                              |    10 +
+ package-lock.json                                  |   160 +-
+ package.json                                       |     2 +
+ package_cpanel.json                                |    23 +
+ server/.env                                        |     6 +-
+ server/.env.production                             |     5 +
+ server/index.js                                    |     6 +-
+ 167 files changed, 50382 insertions(+), 5 deletions(-)
