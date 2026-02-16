@@ -197,6 +197,7 @@
     margin: 0;
     background: linear-gradient(to right, #fff, #aaa);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -451,6 +452,10 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 1.8rem;
+}
+
+.admin-login-box label {
+    color: var(--text-primary);
 }
 
 .auth-link {

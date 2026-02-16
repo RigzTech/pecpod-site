@@ -39,7 +39,7 @@ const Login = () => {
             <div className="admin-login-box">
                 <h2>Admin Login</h2>
                 {error && <p className="error-message">{error}</p>}
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="admin-form">
                     <div className="form-group">
                         <label>Username</label>
                         <input
