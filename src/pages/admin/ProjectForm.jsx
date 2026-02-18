@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_ENDPOINTS } from '../../config/api';
 import AdminLayout from './AdminLayout';
 import './Admin.css';
 
@@ -36,7 +37,7 @@ const ProjectForm = () => {
 
     const fetchProject = async () => {
         try {
-            const res = await fetch(`/api/projects/${id}`);
+            const res = await fetch(API_ENDPOINTS.projectById(id));
             const data = await res.json();
             setFormData(data);
         } catch (err) {
@@ -56,7 +57,7 @@ const ProjectForm = () => {
         data.append('image', file);
 
         try {
-            const res = await fetch('/api/upload', {
+            const res = await fetch(API_ENDPOINTS.upload, {
                 method: 'POST',
                 body: data
             });
@@ -75,7 +76,7 @@ const ProjectForm = () => {
         data.append('image', file);
 
         try {
-            const res = await fetch('/api/upload', {
+            const res = await fetch(API_ENDPOINTS.upload, {
                 method: 'POST',
                 body: data
             });
@@ -97,7 +98,7 @@ const ProjectForm = () => {
         e.preventDefault();
         setLoading(true);
         setSuccess('');
-        const url = isEdit ? `/api/projects/${id}` : '/api/projects';
+        const url = isEdit ? API_ENDPOINTS.projectById(id) : API_ENDPOINTS.projects;
         const method = isEdit ? 'PUT' : 'POST';
 
         try {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './Insights.css';
 
 const Insights = () => {
@@ -10,7 +11,7 @@ const Insights = () => {
     useEffect(() => {
         const fetchInsights = async () => {
             try {
-                const res = await axios.get('/api/insights');
+                const res = await axios.get(API_ENDPOINTS.insights);
                 setArticles(res.data);
                 setLoading(false);
             } catch (err) {

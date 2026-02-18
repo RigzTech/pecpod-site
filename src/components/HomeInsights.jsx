@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 
 const HomeInsights = () => {
     const [latestInsights, setLatestInsights] = useState([]);
@@ -8,7 +9,7 @@ const HomeInsights = () => {
     useEffect(() => {
         const fetchInsights = async () => {
             try {
-                const res = await axios.get('/api/insights');
+                const res = await axios.get(API_ENDPOINTS.insights);
                 // Slice top 3
                 setLatestInsights(res.data.slice(0, 3));
             } catch (err) {

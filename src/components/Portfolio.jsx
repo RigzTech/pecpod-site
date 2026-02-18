@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './Portfolio.css';
 
 const Portfolio = ({ activeFilter }) => {
@@ -10,7 +11,7 @@ const Portfolio = ({ activeFilter }) => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await axios.get('/api/projects');
+                const res = await axios.get(API_ENDPOINTS.projects);
                 setProjects(res.data);
                 setLoading(false);
             } catch (err) {

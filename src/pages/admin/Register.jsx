@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { API_ENDPOINTS } from '../../config/api';
 import "./Admin.css";
 
 const Register = () => {
@@ -32,7 +33,7 @@ const Register = () => {
         }
 
         try {
-            const res = await fetch("/api/auth/register", {
+            const res = await fetch(API_ENDPOINTS.register, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, password }),

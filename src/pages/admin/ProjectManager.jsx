@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_ENDPOINTS } from '../../config/api';
 import AdminLayout from './AdminLayout';
 import './Admin.css';
 
@@ -12,7 +13,7 @@ const ProjectManager = () => {
 
     const fetchProjects = async () => {
         try {
-            const res = await fetch('/api/projects');
+            const res = await fetch(API_ENDPOINTS.projects);
             const data = await res.json();
             setProjects(data);
         } catch (err) {
@@ -23,7 +24,7 @@ const ProjectManager = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this project?')) {
             try {
-                await fetch(`/api/projects/${id}`, { method: 'DELETE' });
+                await fetch(API_ENDPOINTS.projectById(id), { method: 'DELETE' });
                 setProjects(projects.filter(p => p._id !== id));
             } catch (err) {
                 console.error(err);

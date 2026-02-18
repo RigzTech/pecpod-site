@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './InsightDetail.css';
 
 const InsightDetail = () => {
@@ -17,12 +18,12 @@ const InsightDetail = () => {
             setLoading(true);
             try {
                 // Fetch the main article
-                const res = await axios.get(`/api/insights/${id}`);
+                const res = await axios.get(API_ENDPOINTS.insightById(id));
                 setArticle(res.data);
 
                 // Fetch all/related insights
                 // Optimization: Use a tailored endpoint
-                const allRes = await axios.get('/api/insights');
+                const allRes = await axios.get(API_ENDPOINTS.insights);
                 const all = allRes.data;
 
                 const related = all

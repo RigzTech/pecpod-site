@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import './ProjectDetail.css';
 
 const ProjectDetail = () => {
@@ -23,7 +24,7 @@ const ProjectDetail = () => {
         try {
             // Fetch all projects to determine next/prev
             // Optimization: Could create a specific API endpoint for this
-            const res = await axios.get('/api/projects');
+            const res = await axios.get(API_ENDPOINTS.projects);
             const projects = res.data;
 
             const current = projects.find(p => p.id === projectId);

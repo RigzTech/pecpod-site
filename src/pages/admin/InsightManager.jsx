@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_ENDPOINTS } from '../../config/api';
 import AdminLayout from './AdminLayout';
 import './Admin.css';
 
@@ -12,7 +13,7 @@ const InsightManager = () => {
 
     const fetchInsights = async () => {
         try {
-            const res = await fetch('/api/insights');
+            const res = await fetch(API_ENDPOINTS.insights);
             const data = await res.json();
             setInsights(data);
         } catch (err) {
@@ -23,7 +24,7 @@ const InsightManager = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this insight?')) {
             try {
-                await fetch(`/api/insights/${id}`, { method: 'DELETE' });
+                await fetch(API_ENDPOINTS.insightById(id), { method: 'DELETE' });
                 setInsights(insights.filter(i => i._id !== id));
             } catch (err) {
                 console.error(err);

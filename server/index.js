@@ -63,25 +63,9 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Serve frontend static files in production
-if (process.env.NODE_ENV === 'production') {
-    // Check for "public" (cPanel deployment) or "dist" (local build)
-    let frontendPath = path.join(__dirname, '../public');
-    if (!fs.existsSync(frontendPath)) {
-        frontendPath = path.join(__dirname, '../dist');
-    }
+// Root route
+app.get('/', (req, res) => {
+    res.send('Pecpod API Running');
+});
 
-    // Serve static files
-    app.use(express.static(frontendPath));
-
-    // Handle React routing - serve index.html for all non-API routes
-    app.use((req, res) => {
-        res.sendFile(path.join(frontendPath, 'index.html'));
-    });
-} else {
-    app.get('/', (req, res) => {
-        res.send('Pecpod API Running - Development Mode');
-    });
-}
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));

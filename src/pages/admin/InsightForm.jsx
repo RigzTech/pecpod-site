@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { API_ENDPOINTS } from '../../config/api';
 import AdminLayout from './AdminLayout';
 import './Admin.css';
 
@@ -27,7 +28,7 @@ const InsightForm = () => {
 
     const fetchInsight = async () => {
         try {
-            const res = await fetch(`/api/insights/${id}`);
+            const res = await fetch(API_ENDPOINTS.insightById(id));
             const data = await res.json();
             setFormData(data);
         } catch (err) {
@@ -48,7 +49,7 @@ const InsightForm = () => {
         data.append('image', file);
 
         try {
-            const res = await fetch('/api/upload', {
+            const res = await fetch(API_ENDPOINTS.upload, {
                 method: 'POST',
                 body: data
             });
@@ -62,7 +63,7 @@ const InsightForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const url = isEdit ? `/api/insights/${id}` : '/api/insights';
+        const url = isEdit ? API_ENDPOINTS.insightById(id) : API_ENDPOINTS.insights;
         const method = isEdit ? 'PUT' : 'POST';
 
         // Add unique ID for new insights
