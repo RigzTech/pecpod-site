@@ -2,10 +2,10 @@
     "name": "pecpod-server",
     "version": "1.0.0",
     "description": "Backend API for Pecpod Site",
-    "main": "server/index.js",
+    "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "node server/index.js"
+        "start": "node index.js"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",

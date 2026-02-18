@@ -6,7 +6,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load .env from server folder OR root folder
+const envPath = fs.existsSync(path.join(__dirname, '.env'))
+    ? path.join(__dirname, '.env')
+    : path.join(__dirname, '../.env');
+dotenv.config({ path: envPath });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,10 +26,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Static folder for uploaded images
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // Ensure uploads directory exists
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
@@ -34,7 +37,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // DB Config
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/pecpod')
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.error('CRITICAL: MongoDB connection error:');
+        console.error(err);
+    });
 
 // Routes
 import projectRoutes from './routes/projects.js';
@@ -49,7 +55,12 @@ app.use('/api/auth', authRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', message: 'Pecpod API Running' });
+    res.json({
+        status: 'ok',
+        message: 'Pecpod API Running',
+        database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+        env: process.env.NODE_ENV
+    });
 });
 
 // Serve frontend static files in production
@@ -64,7 +75,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(frontendPath));
 
     // Handle React routing - serve index.html for all non-API routes
-    app.get('*', (req, res) => {
+    app.use((req, res) => {
         res.sendFile(path.join(frontendPath, 'index.html'));
     });
 } else {

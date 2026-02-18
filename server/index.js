@@ -9,7 +9,11 @@ import fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.join(__dirname, '.env') });
+// Load .env from server folder OR root folder
+const envPath = fs.existsSync(path.join(__dirname, '.env'))
+    ? path.join(__dirname, '.env')
+    : path.join(__dirname, '../.env');
+dotenv.config({ path: envPath });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,7 +37,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // DB Config
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/pecpod')
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.error('CRITICAL: MongoDB connection error:');
+        console.error(err);
+    });
 
 // Routes
 import projectRoutes from './routes/projects.js';
@@ -48,7 +55,12 @@ app.use('/api/auth', authRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'ok', message: 'Pecpod API Running' });
+    res.json({
+        status: 'ok',
+        message: 'Pecpod API Running',
+        database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+        env: process.env.NODE_ENV
+    });
 });
 
 // Serve frontend static files in production
